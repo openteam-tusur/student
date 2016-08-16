@@ -1,0 +1,32 @@
+app:
+  name:                 name
+  domain:               .domain
+  secret:               secret
+  url:                  http://domain.url/
+  host:                 host
+  nocache_host:         nocache_host
+
+profile:
+  url:                  http://profile.url/
+  sign_in_url:          http://profile.url/users/sign_in
+  sign_out_url:         http://profile.url/users/sign_out
+  users_url:            http://profile.url/users/search
+
+cms:
+  url:                  https://cms.url
+  site_slug:            site_slug
+
+redis:
+  url:                  redis://redis.url/number
+
+redis_user_connector:
+  url:                  redis://redis.url/number
+
+session_store:
+  db:                   4
+  key_prefix:           'session:'
+  host:                 redis.url
+  port:                 6379
+
+youtube:
+  api_key:              KEY
