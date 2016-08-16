@@ -1,0 +1,47 @@
+.right-side
+  .right-documents
+    margin-top: 30px
+    margin-left: 22px
+    font-size: 14px
+
+    img
+      margin: 0px 0px 10px 10px
+
+    p:last-child
+      margin-bottom: 0
+
+    ul li
+      margin-bottom: 10px
+      position: relative
+      padding-left: 30px
+
+      &:before
+        content: ''
+        position: absolute
+        top: 2px
+        left: 0
+        display: block
+        width: 10px
+        height: 20px
+        background-color: #3164B9
+
+      &:after
+        content: ''
+        display: block
+        width: 0
+        height: 0
+        position: absolute
+        left: 10px
+        top: 2px
+        border-style: solid
+        border-width: 10px 0 10px 5px
+        border-color: transparent transparent transparent #3164B9
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+      img
+        display: block
+        margin: 0 auto
+
+      ul li
+        &:before
+          left: 1px

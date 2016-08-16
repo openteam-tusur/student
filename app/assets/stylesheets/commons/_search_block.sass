@@ -1,0 +1,40 @@
+.search-block
+  clear: right
+  margin: 13px 0 0 0
+
+  .simple_form
+    +inline-block
+
+    .form-group
+      +inline-block
+      margin: 0 0 0 0
+
+      input
+        width: 180px
+        color: inherit
+        +border-radius(0)
+        border: 1px solid #008ecc
+        +box-shadow(none)
+        height: 30px
+        outline: none
+        padding: 3px 12px
+        +input-placeholder(#888)
+
+    .form-actions
+      +inline-block
+      margin: 0 0 0 -5px
+
+      a
+        display: block
+        border: 0
+        width: 30px
+        height: 30px
+        background: #0390c8 image_url('magnifier.png') no-repeat center center
+
+  @media (max-width: $screen-xs-max)
+
+    margin: 5px -15px 10px 0
+
+    .simple_form
+      .form-actions
+        display: none

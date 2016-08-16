@@ -1,0 +1,551 @@
+=duration_and_counter_styles
+  .duration_wrapper, .photo_count
+    +display-flex
+    align-items: center
+    position: absolute
+    bottom: 60px
+    left: 10px
+    color: #fff
+    +opacity(.5)
+    background-color: #000
+    padding: 4px 5px 3px
+    +border-radius(8px)
+    +transition(opacity .2s ease, font-size .2s ease)
+
+    .glyphicon, .duration, .count
+      +display-flex
+
+    .duration, .count
+      margin-left: 4px
+      margin-bottom: 0
+
+=hover_duration_and_count_styles
+  &:hover
+    .duration_wrapper, .photo_count
+      +opacity(1)
+      font-size: 22px
+      padding-bottom: 5px
+
+      .duration, .count
+        margin-bottom: -2px
+
+.main_page,
+.aggregate-page
+  .secondary_navigation_wrapper
+    background-color: #005bae
+
+    .secondary_navigation
+      @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+        overflow: hidden
+      //@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+        //overflow: hidden
+
+      //@media(min-width: $screen-md-min) and (max-width: $screen-md-max)
+        //overflow: hidden
+
+    .secondary_navigation ul
+      width: 100%
+      display: table
+      margin: 0
+
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+        margin: 0 -15px
+
+      li
+        font-size: 20px
+        font-family: 'OfficinaSerifBookSCC', 'Verdana', sans-serif
+        display: table-cell
+        text-align: center
+        position: relative
+        border-bottom: 1px solid transparent
+
+        &:hover
+          background-color: #0062bc
+          border-bottom: 1px solid #0086c8
+
+          ul
+            display: block
+
+        a
+          background-color: transparent
+          background-position: 10px center
+          background-repeat: no-repeat
+          padding: 15px 0 15px 50px
+          color: #fff
+          display: block
+          text-align: left
+          width: 200px
+          font-size: 18px
+          font-family: 'PTSans', Verdana, sans-serif
+
+          @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+            width: auto
+            padding: 15px 0 15px 40px
+
+          &:hover
+            text-decoration: none
+
+          &.studentam
+            background-image: image_url('secondary-studentam.png')
+
+          &.aspirantam
+            background-image: image_url('secondary-aspirantam.png')
+
+          &.admission, &.abiturientam
+            background-image: image_url('secondary-admission.png')
+
+          &.degree-programs, &.magistrantam
+            background-image: image_url('secondary-degree-programs.png')
+
+          &.employment, &.sotrudnikam
+            background-image: image_url('secondary-employment.png')
+
+          &.publications
+            background-image: image_url('secondary-publications.png')
+            padding-left: 60px
+
+        ul
+          display: none
+          position: absolute
+          width: 285px
+          background-color: #0062bc
+          z-index: 10
+          margin: 0
+          top: 49px
+          left: 0
+          border-bottom: 1px solid transparent
+
+          li
+            display: block
+            text-align: left
+
+            &:hover
+              border-bottom: 1px solid transparent
+              background-color: #005bae
+
+            &:first-child
+              &:after, &:before
+                bottom: 21px
+                left: 50%
+                border: solid transparent
+                content: " "
+                height: 0
+                width: 0
+                position: absolute
+                pointer-events: none
+
+              &:after
+                border-color: rgba(136, 183, 213, 0)
+                border-top-color: #0062bc
+                border-width: 13px
+                margin-left: -13px
+
+
+              &:before
+                border-color: rgba(194, 225, 245, 0)
+                border-top-color: #0086c8
+                border-width: 12px
+                margin-left: -12px
+
+            a
+              display: block
+              padding: 15px 20px 10px
+              font-size: 1.4rem
+              font-family: 'PTSans', Verdana, sans-serif
+
+
+      @media (max-width: $screen-xs-max)
+        li
+          font-size: 14px
+
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+        li
+          font-size: 16px
+
+      @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+      @media (min-width: $screen-lg-min)
+
+  .news
+
+    .row
+      padding-bottom: 0
+      margin-bottom: 0
+
+    .date
+      color: #7f7f7f
+      font-size: 11px
+      margin-bottom: 20px
+
+    .news-item-big
+      padding: 0
+      overflow: hidden
+      background-color: #fff
+      height: 51.3rem
+
+      .image
+        width: 100%
+        overflow: hidden
+        margin-bottom: 5px
+
+      .title, .annotation
+        padding: 15px 20px
+
+      .title
+        font-size: 2.8rem
+        margin-bottom: 5px
+
+      .annotation
+        font-size: 1.8rem
+        margin-bottom: 5px
+
+      @media (max-width: $screen-xs-max)
+
+        height: auto
+        margin-bottom: 15px
+
+    .news-list
+
+      @media (max-width: $screen-xs-max)
+
+        padding-left: 0
+        padding-right: 0
+
+      ul
+        +clearfix
+
+        li
+          float: left
+          overflow: hidden
+          position: relative
+          background-color: #fff
+          margin: 0 13px 13px 0
+
+          &.news-item-medium
+            width: 419px
+            height: 283px
+            margin: 0
+
+            @media (max-width: $screen-xs-max)
+
+              float: none
+              width: auto
+              height: auto
+              margin-right: 0
+              margin-bottom: 15px
+
+              .image img
+                display: none
+
+            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+              width: 389px
+
+            @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+              width: 341px
+
+          .legend
+            +inline-block
+            font-size: 1.2rem
+            background-color: #e3e7e6
+            padding: 3px 5px
+            margin: -1px 0 5px 15px
+
+          .title
+            padding: 0 15px
+
+          .date
+            padding: 0 15px
+
+          .annotation
+            padding: 0 15px
+
+          &.news-item-small
+            height: 25rem
+
+            .image
+              width: 100%
+              overflow: hidden
+              margin-bottom: 5px
+
+            .title
+              margin-bottom: 5px
+
+            .title, .date
+              padding: 0 15px
+
+            @media (max-width: $screen-xs-max)
+
+              float: none
+              height: auto
+              margin-right: 0
+
+              .image img
+                display: none
+
+            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+              width: 188px
+
+              &:nth-child(2n+1)
+                clear: left
+
+              &:nth-child(2n)
+                margin-right: 0
+
+              &:nth-child(n+5)
+                display: none
+
+            @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+              width: 164px
+
+              &:nth-child(3n+1)
+                clear: left
+
+              &:nth-child(3n)
+                margin-right: 0
+
+            @media (min-width: $screen-lg-min)
+
+              width: 203px
+
+              &:nth-child(3n+1)
+                clear: left
+
+              &:nth-child(3n)
+                margin-right: 0
+
+          .title.without-image
+            margin-top: 10px
+
+    @media (max-width: $screen-xs-max)
+      .last-news-list
+        ul li
+          width: auto
+          float: none
+
+          &:nth-child(3n+1)
+            clear: none
+
+          &:nth-child(3n)
+            margin-right: 21px
+
+          &:nth-child(2n)
+            margin-right: 0
+
+          .image
+            display: none
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+      .last-news-list
+        ul li
+          width: 193px
+
+          &:nth-child(3n+1)
+            clear: none
+
+          &:nth-child(3n)
+            margin-right: 21px
+
+          &:nth-child(2n)
+            margin-right: 0
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+      .last-news-list
+        ul li
+          margin: 0 30px
+
+          &:nth-child(3n+1)
+            clear: none
+
+          &:nth-child(3n)
+            margin-right: 30px
+
+    @media (min-width: $screen-lg-min)
+
+  .info
+    width: 1140px
+    margin: 0 auto
+    background-color: #fff
+    padding: 40px 0
+
+  .events
+    padding: 30px 0 10px
+
+    .header
+      margin-bottom: 15px
+
+      h1, span, a
+        +inline-block
+
+      h1
+        font-size: 30px
+        font-family: 'OfficinaSerifBookSCC', 'Verdana', sans-serif
+        margin: 0
+
+      span
+        color: #d2d2d2
+        margin: 0 5px
+
+    .event
+      +clearfix
+      border-bottom: 1px solid #d2d4d3
+      margin-bottom: 20px
+
+      .image
+        float: left
+        width: 150px
+        height: 100px
+        margin-bottom: 20px
+
+      .date
+        +inline-block
+        position: relative
+        color: #fff
+        background-color: #005baa
+        margin-left: 25px
+        margin-bottom: 15px
+        padding: 3px 18px 3px 12px
+
+        &:before
+          display: block
+          content: ''
+          width: 10px
+          height: 100%
+          position: absolute
+          top: 5px
+          right: 100%
+          +skew(0, -45deg)
+          background-color: #005baa
+
+        &:after
+          display: block
+          content: ''
+          width: 0
+          height: 0
+          position: absolute
+          bottom: 0
+          right: 0
+          border-bottom: 8px solid #fff
+          border-left: 8px solid transparent
+
+      .title
+        font-size: 14px
+        margin-left: 165px
+
+    @media (max-width: $screen-xs-max)
+      .image
+        display: none
+
+      .event
+        padding-bottom: 10px
+
+        .date
+          margin-left: 10px
+
+        .title
+          margin-left: 0
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+      .image
+        display: none
+
+      .event
+        padding-bottom: 10px
+
+        .date
+          margin-left: 10px
+
+        .title
+          margin-left: 0
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+    @media (min-width: $screen-lg-min)
+
+    .row:last-child
+
+      .event
+        border-bottom: 0
+        margin-bottom: 0
+
+  .interesting
+    padding-bottom: 10px
+    padding-top: 30px
+    font-family: 'PTSans', Verdana, sans-serif
+
+    @media (max-width: $screen-xs-max)
+      padding: 20px 0 0 0
+
+    .item
+      max-width: 370px
+      position: relative
+      overflow: hidden
+      height: 247px
+      margin: 0 auto
+
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+        height: 177px
+
+      .title
+        color: #fff
+        position: absolute
+        bottom: 0
+        width: 100%
+        max-width: 370px
+        height: 45px
+        line-height: 45px
+        background-color: #005bae
+        padding: 0 16px
+        font-size: 14px
+
+        span
+          display: inline-block
+          vertical-align: middle
+          line-height: 1.5
+
+      a
+        display: block
+        width: 100%
+        max-width: 370px
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        overflow: hidden
+        text-indent: -999em
+
+      &.photo
+        +duration_and_counter_styles
+        +hover_duration_and_count_styles
+
+        .images-wrapper
+          +display-flex
+
+          .first-image
+            +display-flex
+            flex-grow: 2
+            flex-shrink: 2
+
+          .second-images-block
+            +display-flex
+            flex-direction: column
+            justify-content: space-between
+
+      &.youtube
+        .youtube-poster
+          position: absolute
+          bottom: 11px
+          left: 0
+
+        +duration_and_counter_styles
+        +hover_duration_and_count_styles
+
+
+    @media (max-width: $screen-xs-max)
+      .item
+        margin-bottom: 10px
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+    @media (min-width: $screen-lg-min)

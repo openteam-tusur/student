@@ -1,0 +1,55 @@
+html, body
+  height: 100%
+
+$footer-height-xs: 98px + 60px
+$footer-height-sm: 54px + 60px
+$footer-height-md: 54px + 60px
+$footer-height-lg: 54px + 60px
+
+.page_wrapper
+  min-height: 100%
+  height: auto
+  margin: -0.1px auto (0 - $footer-height-lg)
+  padding: 0.1px 0 $footer-height-lg 0
+
+  @media (max-width: $screen-xs-max)
+
+    margin-bottom: (0 - $footer-height-xs)
+    padding: 0.1px 0 $footer-height-xs 0
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+    margin-bottom: (0 - $footer-height-sm)
+    padding: 0.1px 0 $footer-height-sm 0
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+    margin-bottom: (0 - $footer-height-md)
+    padding: 0.1px 0 $footer-height-md 0
+
+  @media (min-width: $screen-lg-min)
+
+    margin-bottom: (0 - $footer-height-lg)
+    padding: 0.1px 0 $footer-height-lg 0
+
+.footer
+  height: $footer-height-lg
+  bottom: 0
+  position: relative
+  width: 100%
+
+  @media (max-width: $screen-xs-max)
+
+    height: $footer-height-xs
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+    height: $footer-height-sm
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+    height: $footer-height-md
+
+  @media (min-width: $screen-lg-min)
+
+    height: $footer-height-lg

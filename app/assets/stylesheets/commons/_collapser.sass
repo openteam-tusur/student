@@ -1,0 +1,43 @@
+.collapser
+  clear: both
+  margin-top: 20px
+
+  .list-header
+    +clearfix
+    background: #eee image_url("list-icon.jpg") no-repeat left top
+    padding-left: 35px
+
+    h5
+      font-size: 16px
+      font-weight: bold
+      line-height: 25px
+      margin: 0
+
+  .content
+    border: 2px solid #eee
+    padding: 15px
+
+    .person_wrapper
+      +clearfix
+
+      .person_photo
+        float: left
+        margin: 15px 0 0 0
+
+    .person_full_name
+      padding: 15px 0 0 0
+
+    .posts_wrapper
+      padding-bottom: 15px
+      border-bottom: 1px solid #eee
+      margin: 0 !important
+
+      &:last-child
+        border: 0
+
+  .well
+    +clearfix
+    background-color: #fff
+
+    p:last-child
+      margin-bottom: 0

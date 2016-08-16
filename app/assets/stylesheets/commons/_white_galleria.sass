@@ -1,0 +1,125 @@
+.white-galleria
+  margin-bottom: 40px
+  height: auto
+
+  .glyphicon
+    position: absolute
+    z-index: 10
+    color: #fff
+    top: 5px
+    left: 5px
+    background: #000
+    +opacity(.5)
+    padding: 5px
+    font-size: 2.4rem
+    cursor: pointer
+    +transition(.3s)
+
+    &:hover
+      +opacity(1)
+
+  .galleria-image-nav-right
+    right: 0px !important
+    opacity: 0.7
+    padding-right: 30px
+    background-color: #f2f2f2
+    background: rgba(#ccc, .5) image_url('arrows/arrow.png') no-repeat center center
+
+    &:hover
+      background: rgba(#ccc, .5) image_url('arrows/active-arrow.png') no-repeat center center
+
+  .galleria-image-nav-left
+    left: 0px !important
+    opacity: 0.7
+    padding-left: 30px
+    background-color: #f2f2f2
+    background: rgba(#ccc, .5) image_url('arrows/arrow.png') no-repeat center center
+    transform: rotate(180deg)
+
+    &:hover
+      background: rgba(#ccc, .5) image_url('arrows/active-arrow.png') no-repeat center center
+
+  .galleria-theme-classic
+    background: #fff
+
+    .galleria-info
+      bottom: 60px
+      top: auto
+      width: 97.6%
+      left: 10px
+      +opacity(0.8)
+
+      &.fullscreen
+        width: 100%
+        bottom: 85px
+        left: auto
+        padding: 0 10px
+
+        .galleria-info-close
+          right: 15px
+
+        .galleria-info-link
+          right: 15px
+
+      .galleria-info-link
+        width: 33px
+        height: 33px
+        left: auto
+        z-index: -1
+        right: 5px
+        top: auto
+        bottom: 5px
+        background: #000
+        background-size: 30px
+
+      .galleria-info-text
+        height: 70px
+
+      .galleria-info-description
+        font-size: 14px
+        font-family: "PTSans"
+        font-style: normal
+
+  .galleria-container
+    overflow: visible
+
+    .galleria-thumb-nav-left,
+    .galleria-thumb-nav-right
+      margin-top: 5px
+
+  .galleria-thumbnails-list
+    margin-left: 32px !important
+
+  .galleria-thumbnails
+    .galleria-image
+      border: 1px solid #f2f2f2
+      width: 70px !important
+      height: 70px !important
+
+  .galleria-counter
+    left: auto !important
+    right: 10px
+    top: 10px
+    bottom: auto
+    font-size: 1.2rem
+    color: #fff
+    +opacity(0.5)
+    background: #000
+    padding: 5px
+
+  .galleria-container
+    background: #fff
+
+    &.fullscreen
+      .galleria-thumbnails-container
+        height: 70px !important
+
+      .galleria-stage
+        bottom: 85px !important
+
+  .galleria-image-nav,
+  .glyphicon-fullscreen,
+  .galleria-info-link,
+  .galleria-counter,
+  .galleria-info
+    display: none

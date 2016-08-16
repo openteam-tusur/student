@@ -1,0 +1,34 @@
+.sitemap
+  padding-top: 10px
+
+  ul
+    li
+      padding: 5px
+
+      &.has_children
+        ul
+          border-left: 1px solid #dadada
+          padding-left: 20px
+          margin-left: 5px
+
+        li
+          position: relative
+
+          &:before
+            content: ''
+            background: #dadada
+            position: absolute
+            width: 22px
+            height: 1px
+            top: 16px
+            left: -21px
+
+          &:last-child
+            &:after
+              content: ''
+              background: #FFF
+              position: absolute
+              width: 1px
+              height: 100%
+              top: 17px
+              left: -21px

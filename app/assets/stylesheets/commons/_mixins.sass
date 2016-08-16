@@ -1,0 +1,27 @@
+=input-placeholder($color: #fff)
+  &::-webkit-input-placeholder
+    color: $color
+  &:-moz-placeholder
+    color: $color
+  &::-moz-placeholder //for newer versions of Firefox
+    color: $color
+  &:-ms-input-placeholder
+    color: $color
+  &:input-placeholder
+    color: $color
+
+=calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: -o-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+=word-wrap()
+  overflow-wrap: break-word
+  word-wrap: break-word
+  -ms-word-break: break-all
+  word-break: break-word
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto

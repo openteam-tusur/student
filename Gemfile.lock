@@ -127,8 +127,12 @@ GEM
     eventmachine (1.2.0.1)
     execjs (2.7.0)
     ffi (1.9.10)
+    font-awesome-rails (4.5.0.1)
+      railties (>= 3.2, < 5.1)
+    gilenson (1.2.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gravtastic (3.2.6)
     hashie (3.4.4)
     highline (1.7.8)
     hiredis (0.6.1)
@@ -136,6 +140,8 @@ GEM
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jquery-colorbox-rails (1.6.4)
+      railties (>= 3.1, <= 5.0)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -155,6 +161,8 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    non-stupid-digest-assets (1.0.8)
+      sprockets (>= 2.0)
     openteam-commons (0.2.4)
       airbrake
       configliere
@@ -183,6 +191,7 @@ GEM
     rails-assets-chosen (1.5.1)
       rails-assets-jquery (>= 1.4.4)
     rails-assets-galleria (1.4.2)
+    rails-assets-highcharts (4.1.9)
     rails-assets-jcarousel (0.3.4)
       rails-assets-jquery (>= 1.7)
     rails-assets-jquery (3.0.0)
@@ -222,6 +231,8 @@ GEM
       rack (>= 1.0.1)
       rest-client (>= 1.6.0)
     rinku (1.5.1)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -293,14 +304,20 @@ DEPENDENCIES
   coffee-rails
   compass-rails
   esp-commons
+  font-awesome-rails
+  gilenson
+  gravtastic
   hashie
   jbuilder (~> 2.0)
+  jquery-colorbox-rails
   jquery-rails
+  non-stupid-digest-assets
   rack-cache
   rack-utf8_sanitizer
   rails (= 4.2.6)
   rails-assets-chosen!
   rails-assets-galleria!
+  rails-assets-highcharts!
   rails-assets-jcarousel!
   rails-assets-jquery-touchswipe!
   rails-assets-jquery.scrollTo!
@@ -309,6 +326,7 @@ DEPENDENCIES
   redis-session-store
   rest-client
   rest-client-components
+  russian
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form

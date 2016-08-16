@@ -1,0 +1,156 @@
+.right-side
+  .right-navigation
+    margin-bottom: 15px
+    font-size: 1.6rem
+
+
+    h3
+      font-size: 24px
+      font-family: 'OfficinaSerifBookSCC', 'Verdana', sans-serif
+      margin-top: 0
+      margin-bottom: 15px
+      text-align: center
+
+    > ul
+      color: #fff
+      background-color: #005baa
+      position: relative
+      padding-bottom: 10px
+
+      @media (max-width: $screen-xs-max)
+        max-height: 530px
+        overflow-y: scroll
+
+      &:after
+        display: block
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-style: solid
+        top: 100%
+        right: 0
+        border-width: 15px 0 0 15px
+        border-color: #005baa transparent transparent transparent
+
+      &:before
+        display: block
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-style: solid
+        bottom: 0
+        left: -10px
+        border-width: 0 10px 10px 10px
+        border-color: transparent transparent #fff transparent
+
+      a
+        display: block
+        color: #fff
+        padding: 8px 15px
+
+        &:hover,
+        &:active,
+        &:focus
+          text-decoration: none
+
+        &:hover
+          background-color: #3164b9
+
+      li.active > a, li.active-item > a
+        color: #fff
+
+        &:first-child
+          background: #0390c8
+
+      li.active
+        &.disable-active > a
+          background: #005baa
+
+      > li
+        border-bottom: 1px solid #418bca
+
+        &:last-child
+          border-bottom: 0
+
+        > a
+          font-size: 1.6rem
+
+        > ul
+          border-top: 1px solid #418bca
+
+          &.closed
+            display: none
+
+          &.opened
+            display: block
+
+          > li
+
+            > a
+              position: relative
+              padding-left: 35px
+
+              &:before
+                display: block
+                content: '\25A0'
+                position: absolute
+                left: 15px
+                top: 8px
+
+              > span
+                color: #a6c6e1
+                font-size: 1rem
+                font-weight: normal
+                float: right
+                background-color: #0390c8
+                padding: 5px
+                margin-left: 10px
+
+                &:hover
+                  color: #fff
+
+            &.archive_toggler
+              cursor: pointer
+              color: #a6c6e1
+              padding: 10px 15px 10px 35px
+
+              &:hover
+                background-color: #3164b9
+
+            > .months > li > a
+              font-size: 1.4rem
+              padding: 5px 10px 5px 35px
+
+    @media (max-width: $screen-xs-max)
+      position: fixed
+      +calc('width', '100% - 35px')
+      top: 155px
+      +calc('left', '100% - 35px')
+      margin-left: 35px
+      z-index: 99999
+      +box-shadow(-1px 1px 1px #777)
+      margin-bottom: 0
+
+      ul
+        margin-bottom: 0
+
+        &:before
+          display: none
+
+      .toggle-button
+        color: #a6c6e1
+        font-size: 20px
+        position: absolute
+        left: -20px
+        top: 0
+        background-color: #005baa
+        +box-shadow(-1px 1px 1px #777)
+        +border-top-left-radius(3px)
+        +border-bottom-left-radius(3px)
+        padding: 2px 0
+        z-index: 99999
+
+        &:active
+          color: #fff

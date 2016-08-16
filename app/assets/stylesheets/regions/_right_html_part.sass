@@ -1,0 +1,84 @@
+.right-side
+  .right_html_part_wrapper
+    margin: 30px 0px 0px 23px
+
+    .title
+      font-size: 18px
+      font-family: 'OfficinaSerifBookSCC', 'Verdana', sans-serif
+      text-align: center
+      background-color: #d2d4d3
+      position: relative
+      margin: 0 0 0 10px
+      padding: 7px 0 5px 0
+
+      &:after
+        display: block
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        right: 0
+        border-style: solid
+        bottom: 0
+        border-width: 10px 10px 0 10px
+        border-color: transparent #f2f2f2 transparent transparent
+
+      &:before
+        display: block
+        content: ''
+        position: absolute
+        top: 5px
+        left: -10px
+        background-color: #d2d4d3
+        +skew(0, -45deg)
+        height: 100%
+        width: 10px
+        z-index: 1
+
+    .info
+      width: 200px
+      margin: 0 auto
+      margin-bottom: 20px
+      margin-top: 10px
+
+      .img_box
+        margin: 0 auto 10px
+
+        img
+          margin-top: 10px
+
+      .fio
+        font-size: 18px
+        font-family: 'OfficinaSerifBookSCC', 'Verdana', sans-serif
+        line-height: 18px
+        padding: 0 0 5px 0
+
+        &:after
+          background-color: #FFF
+
+      .gray_text
+        font-size: 1.4rem
+        color: #959595
+        text-align: left
+
+      .contacts
+        margin: 5px 0 0 0
+        font-size: 1.4rem
+
+        p
+          margin: 0 0 5px
+
+    &.small-contacts
+      margin-left: 0px
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+    .right_html_part_wrapper
+      .info
+        width: auto
+        padding-left: 10px
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+    .right_html_part_wrapper
+      .info
+        width: auto
+        padding-left: 10px

@@ -1,0 +1,111 @@
+body
+  color: #000
+  font-size: 1.6rem
+  font-family: 'PTSans', Verdana, sans-serif
+  background-color: #fff
+  line-height: 1.4
+
+  .container.margin-top
+    margin-top: 20px
+a
+  color: #0066cc
+  outline: none
+  text-decoration: none
+
+  &:hover
+    color: #0066cc
+    text-decoration: underline
+
+.text-white
+  color: #fff
+
+  a
+    color: #fff
+
+.text-italic
+  font-style: italic
+
+.white-bg,
+.gray-bg,
+.darkgray-bg
+  padding: 30px 0 10px
+
+  @media (max-width: $screen-xs-max)
+    padding: 15px 0
+
+  .header
+    margin-bottom: 15px
+
+    h1, span, a
+      +inline-block
+      vertical-align: top
+
+    h1
+      font-size: 30px
+      font-family: 'OfficinaSerifBookSCC', 'Verdana', sans-serif
+      margin: 0
+
+    span
+      color: #d2d2d2
+      margin: 0 5px
+
+.nobr
+  white-space: nowrap
+
+.float_left
+  float: left
+  margin: 5px 15px 15px 0
+
+.float_right
+  float: right
+  margin: 5px 0 15px 15px
+
+.cursor-pointer
+  cursor: pointer
+
+.white-bg
+  background-color: #fff
+
+// Borders Generator
+.border-bottom
+  &.light-gray
+    border-bottom: 1px solid #e3e3e3
+
+  @media (max-width: $screen-xs-max)
+    padding: 0 0 10px
+
+.gray-bg
+  background-color: #f2f2f2
+
+.darkgray-bg
+  background-color: #d2d4d3
+
+.overlay
+  background-color: #000
+  z-index: 9
+  width: 100%
+  +calc(height, '100% - 166px')
+  position: absolute
+  top: 166px
+  left: 0
+  +opacity(0)
+  display: none
+
+  @media (max-width: $screen-xs-max)
+
+    display: none
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+    top: 139px
+    +calc(height, '100% - 139px')
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+    top: 139px
+    +calc(height, '100% - 139px')
+
+  @media (min-width: $screen-lg-min)
+
+    top: 166px
+    +calc(height, '100% - 166px')

@@ -1,0 +1,1584 @@
+body
+  .hide-on-normal,
+  .hidden
+    display: none !important
+
+  &.cecutient
+    .hide-on-normal
+      display: block !important
+
+body
+  &.color-white,
+  &.color-black,
+  &.color-blue
+    .cecutient-panel
+      background: #dadada !important
+      border: 1px solid #999 !important
+      border-top: 0 !important
+      font-family: Arial
+      font-size: 16px !important
+      text-align: center
+      padding: 15px
+
+      div
+        +inline-block
+        color: #000 !important
+        background: #dadada !important
+        margin: 0 5px
+
+        &.setting-font-size
+          .reduce-font-size,
+          .increase-font-size
+            +inline-block
+            font-size: 36px !important
+            font-weight: bold
+            text-align: center
+            width: 40px
+            height: 40px
+            line-height: 40px
+            text-decoration: none
+            color: #000 !important
+            background-color: #fff !important
+
+            &:hover
+              background-color: #efefef !important
+
+          .font-size
+            color: #000 !important
+
+        &.setting-color
+          a
+            +inline-block
+            width: 40px
+            height: 40px
+
+            &.current
+              position: relative
+
+              &:after
+                top: 100%
+                left: 50%
+                border: solid transparent
+                content: ''
+                height: 0
+                width: 0
+                position: absolute
+                pointer-events: none
+                border-color: transparent
+                border-width: 5px
+                margin-left: -5px
+
+            &.color-white
+              background-color: #fff !important
+
+              &.current:after
+                border-top-color: #fff !important
+
+            &.color-black
+              background-color: #000 !important
+
+              &.current:after
+                border-top-color: #000 !important
+
+            &.color-blue
+              background-color: #9dd1ff !important
+
+              &.current:after
+                border-top-color: #9dd1ff !important
+
+        &.setting-images
+          a
+            +inline-block
+            font-size: 18px !important
+            color: #000 !important
+            background-color: #fff !important
+            height: 40px
+            line-height: 40px
+            padding: 0 15px
+            text-decoration: none
+            color: #000 !important
+            background-color: #fff !important
+
+            &:hover
+              background-color: #efefef !important
+
+            &.current
+              position: relative
+
+              &:after
+                top: 100%
+                left: 50%
+                border: solid transparent
+                content: ''
+                height: 0
+                width: 0
+                position: absolute
+                pointer-events: none
+                border-color: transparent
+                border-top-color: #fff !important
+                border-width: 5px
+                margin-left: -5px
+
+              &:hover
+                &:after
+                  border-top-color: #efefef !important
+
+body
+
+  /***************************/
+  /******* color white *******/
+  /***************************/
+
+  $text_color: #000
+  $border_color: #000
+  $background_color: #FFF
+
+  &.color-white
+    color: $text_color !important
+    background-color: $background_color !important
+    border-color: $border_color !important
+
+    a
+      &.icon
+        &.doc,
+        &.xls,
+        &.pdf
+          +filter(grayscale(100%))
+
+    span, a
+      color: $text_color !important
+
+    .glyphicon
+      color: #FFF !important
+
+    img,
+    .language
+      +filter(grayscale(100%))
+
+    ul
+
+      &.ul-rhombus
+        li
+          &:before
+            +filter(grayscale(100%))
+
+    ol
+      li
+        &:before,
+        &:after
+          +filter(grayscale(100%))
+
+    .header,
+    .top_header
+      background: $background_color
+      color: $text_color
+
+    .sites_for
+      li
+        border-left: 1px solid
+
+        &:first-child
+          border-left: 0
+
+    .site_name
+      border-left: 2px solid $border_color !important
+
+    .dropdown_sites_tusur
+      border-left: 1px solid $border_color !important
+
+    .sign_in
+      border-left: 1px solid $border_color !important
+
+    .top_header
+      border-bottom: 1px solid
+      border-top: 1px solid
+
+    .subtop_header
+      border-bottom: 1px solid $border_color
+
+    .main-navigation
+      background: $background_color
+      color: $text_color
+
+      .navigation_group_title
+        +filter(grayscale(100%))
+
+      ul
+        li
+          &.active
+            a
+              background: #dadada !important
+
+      .subnavigation
+        .items
+          ul
+            li
+              a
+                background: $background_color !important
+
+
+    .inner-page-wrapper
+      &.with-right-bg
+        background: $background_color
+
+    .right-navigation
+      border: 1px solid $border_color
+      margin-bottom: 0
+
+      a
+        background: $background_color
+
+      ul
+        background: $background_color
+        margin-bottom: 0
+        padding-bottom: 0
+
+        &:before,
+        &:after
+          display: none
+
+        li
+          border-bottom: 1px solid $border_color
+
+          &.active
+            border-top: 1px solid $border_color
+            border-bottom: 1px solid $border_color !important
+
+            a
+              background: $background_color !important
+
+          a
+            &:hover
+              background: #dadada
+
+          &.active-item
+            a
+              background: #dadada !important
+
+          ul
+            border-top: 1px solid $border_color !important
+            background: $background_color
+
+            li
+              border-bottom: 0
+
+        .archive
+          span
+            background: #FFF
+
+          .inactive
+            a
+              background: $background_color !important
+
+    .right-documents,
+    .right-links
+      ul
+        li
+          &:before
+            background: #4e4e4e
+
+          &:after
+            border-color: transparent transparent transparent #4e4e4e
+
+    .curve-header
+      .line
+        border-bottom: 3px solid #4e4e4e !important
+
+        &:after,
+        &:before
+          border-bottom: 3px solid #4e4e4e !important
+
+    .faculties_departments
+      .faculties
+        .item
+          ul
+            border-left: 3px solid $border_color
+
+            &:after
+              border-bottom: 3px solid $border_color
+
+    .simple_form
+      &.search
+        input
+          border: 1px solid $border_color
+
+      .form-actions
+        a
+          +filter(grayscale(100%))
+
+    .promo
+      &.ru,
+      &.en
+        +filter(grayscale(100%))
+        border-top: 1px solid $border_color
+        border-bottom: 1px solid $border_color
+        background: none
+
+        .text
+          color: $text_color
+
+        h1
+          &:after
+            display: none
+
+        .next,
+        .prev
+          .glyphicon
+            font-size: 24px
+
+    .main_page
+      .spotlight
+        background: $background_color
+
+    .ranking
+      +filter(grayscale(100%))
+
+    .academic_schedule_wrapper
+      .event
+        .month,
+        .number,
+        .what
+          color: $text_color
+
+        .month,
+        .number,
+        .what
+          &.second,
+          &.third
+            color: $text_color
+
+    .collapser
+      .list-header
+        +filter(grayscale(100%))
+
+    .secondary_navigation_wrapper
+      +filter(grayscale(100%))
+      border-bottom: 1px solid $border_color
+      background-color: #FFF
+
+      .parent
+        li
+          &:hover
+            background: $background_color
+            border-bottom: none
+
+          a
+            &:hover
+              text-decoration: underline
+
+    .interesting
+      .item
+        &.youtube
+          border: 1px solid $border_color
+
+          .title
+            background: $background_color
+            color: $text_color
+
+          .duration_wrapper
+            .glyphicon
+              color: #FFF !important
+
+            span
+              color: #FFF !important
+
+    .social-likes
+      +filter(grayscale(100%))
+
+    .last-news
+      .news
+        &.relative
+          border: 1px solid $border_color
+          padding: 15px 10px
+
+        .news-item
+          background: #FFF
+
+      .contacts
+        p
+          background: $background_color
+
+          &:before
+            background: $background_color
+
+      .since
+        font-weight: bold
+
+      .life-in-tusur,
+      .events
+        border: 1px solid $border_color
+        padding: 15px 10px
+
+      .block-title
+        background: #FFF
+        font-size: 2.2rem
+        padding-left: 0
+
+        &:after,
+        &:before
+          background: #FFF
+          display: none
+
+    .main_page_statistics
+      +filter(grayscale(100%))
+
+      .center
+        background: $background_color
+
+    .banners
+      background: $background_color
+
+    .pagination
+      .current
+        background: #4e4e4e
+
+    .footer
+      background: #FFF
+      +filter(grayscale(100%))
+      color: $text_color
+
+      .copyrights
+        color: $text_color
+
+    /* EN */
+    .blue-officina
+      color: $text_color
+
+    .js-init-chars
+      +filter(grayscale(100%))
+
+    form
+      .submit
+        background: #4e4e4e
+        border: #4e4e4e
+
+  /***************************/
+  /******* color black *******/
+  /***************************/
+
+  $text_color: #FFF
+  $border_color: #FFF
+  $background_color: #000
+  $black_text: #000
+
+  &.color-black
+    color: $text_color !important
+    background-color: $background_color !important
+    border-color: $border_color !important
+
+    a
+      &.icon
+        &.doc,
+        &.xls,
+        &.pdf
+          +filter(grayscale(100%))
+
+    span, a
+      color: $text_color !important
+
+    .glyphicon
+      color: #FFF !important
+
+    img,
+    .language
+      +filter(grayscale(100%))
+
+    ul
+
+      &.ul-rhombus
+        li
+          &:before
+            +filter(grayscale(100%))
+
+    ol
+      li
+        &:before,
+        &:after
+          +filter(grayscale(100%))
+
+    .header,
+    .top_header
+      background: $background_color
+      color: $text_color
+
+    .logotype
+      img
+        +filter(sepia(30%) invert(50%))
+
+    .sites_for
+      li
+        border-left: 1px solid
+
+        &:first-child
+          border-left: 0
+
+        a
+          &:hover
+            background: $background_color
+
+    .left-side
+      .sites
+        li
+          a
+            &:hover
+              text-decoration: underline !important
+
+    .site_name
+      border-left: 2px solid $border_color !important
+
+    .dropdown_sites_tusur
+      border-left: 1px solid $border_color !important
+
+      li
+        background: $background_color !important
+
+        a
+          &:hover
+            background: $background_color
+
+    .sign_in
+      border-left: 1px solid $border_color !important
+
+    .top_header
+      border-bottom: 1px solid
+      border-top: 1px solid
+
+    .subtop_header
+      border-bottom: 1px solid $border_color
+      background: $background_color
+
+    .left-side
+      background: $background_color
+
+    .visit-card
+      background: $background_color
+
+      &:after,
+      &:before
+        display: none
+
+    .right-contacts
+      color: $black_text !important
+
+      .glyphicon,
+      a
+        color: $black_text !important
+
+    .right-news-list-wrapper
+      .title
+        color: $black_text
+
+    .main-navigation
+      background: $background_color
+      color: $text_color
+
+      .navigation_group_title
+        +filter(grayscale(100%))
+
+      .container
+        a
+          &:hover
+            background: $background_color
+
+        li.active
+          a
+            background: $background_color !important
+            color: #FFF !important
+
+            &:hover
+              color: $text_color !important
+
+        ul
+          li
+            &:hover
+              a
+                text-decoration: underline
+                color: #FFF !important
+                background: $background_color !important
+
+      .subnavigation
+        background: $background_color !important
+        border-bottom: $border_color
+
+        .items.grouped
+          a
+            color: #FFF !important
+            background: $background_color !important
+
+            &:hover
+              background: $background_color !important
+
+    .inner-page-wrapper
+      &.with-right-bg
+        background: $background_color
+
+      a
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
+
+    .right-navigation
+      border: 1px solid $border_color
+      margin-bottom: 0
+
+      a
+        background: $background_color
+
+        &:hover
+          text-decoration: none !important
+
+      ul
+        background: $background_color
+        margin-bottom: 0
+        padding-bottom: 0
+
+        &:before,
+        &:after
+          display: none
+
+        li
+          border-bottom: 1px solid $border_color
+
+          &.active
+            border-top: 1px solid $border_color
+            border-bottom: 1px solid $border_color !important
+
+            a
+              background: $background_color !important
+
+          a
+            &:hover
+              background: $background_color
+              text-decoration: underline
+
+          &.active-item
+            a
+              background: #FFF !important
+              color: $black_text !important
+
+          ul
+            border-top: 1px solid $border_color !important
+            background: $background_color
+
+            li
+              border-bottom: 0
+
+        .archive
+          span
+            background: #4e4e4e
+
+          .inactive
+            a
+              background: $background_color !important
+              color: $text_color !important
+
+    .right-documents,
+    .right-links
+      ul
+        li
+          &:before
+            background: #4e4e4e
+
+          &:after
+            border-color: transparent transparent transparent #4e4e4e
+
+    .page-annotation,
+    .annotation
+      &:before
+        border-top: 2rem solid #000
+
+    .page-annotation,
+    .annotation,
+    .cite
+      color: $black_text
+
+      a
+        color: $black_text !important
+
+    .curve-header
+      .line
+        border-bottom: 3px solid #4e4e4e !important
+
+        &:after,
+        &:before
+          border-bottom: 3px solid #4e4e4e !important
+
+    .youtube_video_gallery_wrapper
+      .video-item
+        .date
+          color: $black_text !important
+
+        .description
+          a
+            color: $black_text !important
+
+    .photogalleries
+      .photogallery_item
+        border: 1px solid $border_color
+
+        .description
+          background: $background_color
+
+    .related_video,
+    .flex-more-like-this
+      a
+        color: #000 !important
+
+    .faculties_departments
+      .faculties
+        .item
+          ul
+            border-left: 3px solid $border_color
+
+            &:after
+              border-bottom: 3px solid $border_color
+
+    .simple_form
+      &.search
+        input
+          border: 1px solid $border_color
+
+      .form-actions
+        a
+          +filter(grayscale(100%))
+
+    .promo
+      &.ru,
+      &.en
+        +filter(grayscale(100%))
+        border-top: 1px solid $border_color
+        border-bottom: 1px solid $border_color
+        background: none
+
+        .text
+          color: $text_color
+
+        h1
+          color: $black_text
+
+          &:after
+            display: none
+            background: $background_color
+
+          a
+            color: $black_text !important
+
+        .next,
+        .prev
+          .glyphicon
+            font-size: 24px
+            color: $black_text !important
+
+    .main_page
+      .spotlight
+        background: $background_color
+
+        .item
+          .title
+            span,
+            a
+              color: $black_text !important
+
+        .small
+          &.news
+            a
+              color: $black_text !important
+
+    .news
+      &.gray-bg
+        background: $background_color
+
+        .container
+          .row
+            &:first-child
+              border-bottom: 0
+
+        .news-item-small,
+        .news-item-big
+          a
+            color: $black_text !important
+
+
+    .ranking
+      +filter(grayscale(100%))
+
+    .academic_schedule_wrapper
+      .event
+        .month,
+        .number,
+        .what
+          color: $text_color
+
+        .month,
+        .number,
+        .what
+          &.second,
+          &.third
+            color: $text_color
+
+    .collapser
+      .list-header
+        +filter(grayscale(100%))
+
+        a
+          color: $black_text !important
+
+      .well
+        background: $background_color
+
+    .secondary_navigation_wrapper
+      +filter(grayscale(100%))
+      border-bottom: 1px solid $border_color
+      background-color: $background_color
+
+      .parent
+        li
+          &:hover
+            background: $background_color
+            border-bottom: none
+
+          a
+            &:hover
+              text-decoration: underline
+
+    .interesting
+      background: $background_color
+
+      .item
+        &.youtube
+          border: 1px solid $border_color
+
+          .title
+            background: $background_color
+            color: $text_color
+
+          .duration_wrapper
+            .glyphicon
+              color: #FFF !important
+
+            span
+              color: #FFF !important
+
+    .social-likes
+      +filter(grayscale(100%))
+
+    .last-news
+      &.white-bg
+        background: $background_color !important
+
+      .news
+        &.relative
+          border: 1px solid $border_color
+          padding: 15px 10px
+
+        .news-item
+          background: $background_color
+
+      .contacts
+        p
+          background: $background_color
+
+          &:before
+            background: $background_color
+
+      .since
+        font-weight: bold
+
+      .life-in-tusur,
+      .events
+        border: 1px solid $border_color
+        padding: 15px 10px
+
+      .block-title
+        background: $background_color
+        font-size: 2.2rem
+        padding-left: 0
+        color: $text_color
+
+        &:after,
+        &:before
+          background: $background_color
+          display: none
+
+    .main_page_statistics
+      +filter(grayscale(100%))
+      background: $background_color
+
+      .animate
+        color: $text_color
+
+      .center
+        background: $background_color
+
+    .banners
+      background: $background_color
+
+    .pagination
+      .current
+        background: #4e4e4e
+
+    .footer
+      background: $background_color
+      +filter(grayscale(100%))
+      color: $text_color
+
+      .copyrights
+        color: $text_color
+
+    /***************************/
+    /******* EN ****************/
+    /***************************/
+
+    .employment
+      h4
+        color: $text_color
+
+      .icon-text
+        color: $black_text !important
+
+    .landing_container
+      .sidenav
+        background: #000
+
+        li
+          a
+            &:hover
+              background: $background_color !important
+              text-decoration: none
+
+      form
+        .submit
+          background: #4e4e4e
+          border: #4e4e4e
+
+    .separator,
+    .person
+      color: $black_text
+
+    .js-random
+      .gray-back
+        color: $black_text !important
+
+    blockquote
+      color: $black_text
+
+    .news
+      .annotation
+        color: $text_color
+
+  /***************************/
+  /******* color blue *******/
+  /***************************/
+
+  $text_color: #063462
+  $border_color: #063462
+  $background_color: #9dd1ff
+  $black_text: #000
+
+  &.color-blue
+    color: $text_color !important
+    background-color: $background_color !important
+    border-color: $border_color !important
+
+    a
+      &.icon
+        &.doc,
+        &.xls,
+        &.pdf
+          +filter(grayscale(100%))
+
+    span, a
+      color: $text_color !important
+
+    .glyphicon
+      color: $text_color !important
+
+    img,
+      +filter(sepia(1) hue-rotate(170deg))
+
+    ul
+
+      &.ul-rhombus
+        li
+          &:before
+            +filter(sepia(1) hue-rotate(170deg))
+
+    ol
+      li
+        &:before,
+        &:after
+          +filter(sepia(1) hue-rotate(170deg))
+
+    .header,
+    .top_header
+      background: $background_color
+      color: $text_color
+
+    .sites_for
+      li
+        border-left: 1px solid
+
+        &:first-child
+          border-left: 0
+
+        a
+          &:hover
+            background: $background_color
+
+    .left-side
+      .sites
+        li
+          a
+            &:hover
+              text-decoration: underline !important
+
+    .site_name
+      border-left: 2px solid $border_color !important
+
+    .dropdown_sites_tusur
+      border-left: 1px solid $border_color !important
+
+      li
+        background: $background_color !important
+
+        a
+          &:hover
+            background: $background_color
+
+    .sign_in
+      border-left: 1px solid $border_color !important
+
+    .top_header
+      border-bottom: 1px solid
+      border-top: 1px solid
+
+    .subtop_header
+      border-bottom: 1px solid $border_color
+      background: $background_color
+
+    .left-side
+      background: $background_color
+
+    .visit-card
+      background: $background_color
+
+      &:after,
+      &:before
+        display: none
+
+    .right-contacts
+      color: $black_text !important
+
+      .glyphicon,
+      a
+        color: $black_text !important
+
+    .right-news-list-wrapper
+      .title
+        color: $black_text
+
+    .main-navigation
+      background: $background_color
+      color: $text_color
+
+      .navigation_group_title
+        +filter(sepia(1) hue-rotate(170deg))
+
+      .container
+        a
+          &:hover
+            background: $background_color
+
+        li.active
+          a
+            background: #FFF !important
+            color: $text_color !important
+
+            &:hover
+              color: $text_color !important
+
+        ul
+          li
+            &:hover
+              a
+                text-decoration: underline
+                color: #063462 !important
+                background: $background_color !important
+
+      .subnavigation
+        background: $background_color !important
+        border-bottom: $border_color
+
+        .items.grouped
+          a
+            color: #063462 !important
+            background: $background_color !important
+
+            &:hover
+              background: $background_color !important
+
+    .inner-page-wrapper
+      &.with-right-bg
+        background: $background_color
+
+      a
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
+
+    .right-navigation
+      border: 1px solid $border_color
+      margin-bottom: 0
+
+      a
+        background: $background_color
+
+        &:hover
+          text-decoration: none !important
+
+      ul
+        background: $background_color
+        margin-bottom: 0
+        padding-bottom: 0
+
+        &:before,
+        &:after
+          display: none
+
+        li
+          border-bottom: 1px solid $border_color
+
+          &.active
+            border-top: 1px solid $border_color
+            border-bottom: 1px solid $border_color !important
+
+            a
+              background: $background_color !important
+
+          a
+            &:hover
+              background: $background_color
+              text-decoration: underline
+
+          &.active-item
+            a
+              background: #FFF !important
+              color: $black_text !important
+
+          ul
+            border-top: 1px solid $border_color !important
+            background: $background_color
+
+            li
+              border-bottom: 0
+
+        .archive
+          span
+            background: #4e4e4e
+
+          .inactive
+            a
+              background: $background_color !important
+              color: $text_color !important
+
+    .right-documents,
+    .right-links
+      ul
+        li
+          &:before
+            background: $text_color
+
+          &:after
+            border-color: transparent transparent transparent $text_color
+
+    .page-annotation,
+    .annotation
+      &:before
+        border-top: 2rem solid #000
+
+    .page-annotation,
+    .annotation,
+    .cite,
+    .subheader
+      color: $text_color !important
+      background: $background_color !important
+      border: 1px solid $border_color !important
+
+      &:after,
+      &:before
+        display: none
+
+      a
+        color: $black_text !important
+
+    .curve-header
+      .line
+        border-bottom: 3px solid #4e4e4e !important
+
+        &:after,
+        &:before
+          border-bottom: 3px solid #4e4e4e !important
+
+    .youtube_video_gallery_wrapper
+      .video-item
+        .date
+          color: $black_text !important
+
+        .description
+          a
+            color: $black_text !important
+
+    .photogalleries
+      .photogallery_item
+        border: 1px solid $border_color
+
+        .description
+          background: $background_color
+
+    .related_video,
+    .flex-more-like-this
+      a
+        color: #000 !important
+
+    .faculties_departments
+      .faculties
+        .item
+          ul
+            border-left: 3px solid $border_color
+
+            &:after
+              border-bottom: 3px solid $border_color
+
+    .simple_form
+      &.search
+        input
+          border: 1px solid $border_color
+
+      .form-actions
+        a
+          +filter(sepia(1) hue-rotate(170deg))
+
+    .promo
+      &.ru,
+      &.en
+        +filter(sepia(1) hue-rotate(170deg))
+        border-top: 1px solid $border_color
+        border-bottom: 1px solid $border_color
+        background: none
+
+        .text
+          color: $text_color
+
+        h1
+          color: $black_text
+
+          &:after
+            display: none
+            background: $background_color
+
+          a
+            color: $black_text !important
+
+        .next,
+        .prev
+          .glyphicon
+            font-size: 24px
+            color: $black_text !important
+
+    .main_page
+      .spotlight
+        background: $background_color
+
+        .item
+          .title
+            span,
+            a
+              color: $text_color !important
+
+        .small
+          &.news,
+            background: $background_color
+            border: 1px solid $border_color
+
+            a
+              color: $text_color !important
+
+        .item,
+        .medium,
+          background: $background_color
+          border: 1px solid $border_color
+
+    .news
+      &.gray-bg
+        background: $background_color
+
+        .news-item-small,
+        .news-item-big
+          a
+            color: $text_color !important
+
+    .ranking
+      +filter(sepia(1) hue-rotate(170deg))
+
+    .academic_schedule_wrapper
+      .event
+        .month,
+        .number,
+        .what
+          color: $text_color
+
+        .month,
+        .number,
+        .what
+          &.second,
+          &.third
+            color: $text_color
+
+    .collapser
+      border: 1px solid $border_color
+
+      .list-header
+        +filter(sepia(1) hue-rotate(170deg))
+
+        h5
+          background: $background_color
+
+        a
+          color: $black_text !important
+
+      .well
+        background: $background_color
+
+    .secondary_navigation_wrapper
+      border-bottom: 1px solid $border_color
+      background-color: $background_color
+
+      .parent
+        li
+          &:hover
+            background: $background_color
+            border-bottom: none
+
+          a
+            &:hover
+              text-decoration: underline
+
+    .interesting
+      background: $background_color
+
+      .item
+        &.youtube
+          border: 1px solid $border_color
+
+          .title
+            background: $background_color
+            color: $text_color
+
+          .duration_wrapper
+            .glyphicon
+              color: $text_color !important
+
+            span
+              color: $text_color !important
+
+    .social-likes
+      +filter(sepia(1) hue-rotate(170deg))
+
+    .last-news
+      &.white-bg
+        background: $background_color !important
+
+      .news
+        &.relative
+          border: 1px solid $border_color
+          padding: 15px 10px
+
+        .news-item
+          background: $background_color
+
+      .contacts
+        p
+          background: $background_color
+
+          &:before
+            background: $background_color
+
+      .since
+        font-weight: bold
+
+      .life-in-tusur,
+      .events
+        border: 1px solid $border_color
+        padding: 15px 10px
+
+      .block-title
+        background: $background_color
+        font-size: 2.2rem
+        padding-left: 0
+        color: $text_color
+
+        &:after,
+        &:before
+          background: $background_color
+          display: none
+
+    .main_page_statistics
+      +filter(sepia(2) hue-rotate(170deg))
+      background: $background_color
+
+      .animate
+        color: $text_color
+
+      .center
+        background: $background_color
+
+    .banners
+      background: $background_color
+
+    .pagination
+      .current
+        background: #4e4e4e
+
+    .footer
+      background: $background_color
+      +filter(sepia(2) hue-rotate(170deg))
+      color: $text_color
+
+      .copyrights
+        color: $text_color
+
+    /***************************/
+    /******* EN ****************/
+    /***************************/
+
+    .employment
+      h4
+        color: $text_color
+
+      .icon-text
+        color: $black_text !important
+
+    .landing_container
+      .sidenav
+        background: #000
+
+        li
+          a
+            &:hover
+              background: $background_color !important
+              text-decoration: none
+
+      form
+        .submit
+          background: #4e4e4e
+          border: #4e4e4e
+
+    .separator,
+    .person
+      color: $black_text
+
+    .js-random
+      .gray-back
+        color: $black_text !important
+
+    blockquote
+      color: $black_text
+
+    .news
+      .annotation
+        color: $text_color
+        border: 0 !important
+
+      &.gray-bg
+        .container
+          .row
+            &:first-child
+              border-bottom: 0
+
+  /***************************/
+  /******* hide images *******/
+  /***************************/
+
+  &.images-hide
+    img
+      display: none !important
+
+    *
+      background-image: none !important
+
+      &:before,
+      &:after
+        background-image: none !important
+
+      &.icon
+        padding-left: 0
+
+    .header
+      .logotype
+        display: none
+
+      .sitename
+        @extend .col-lg-9
+        @extend .col-md-9
+
+        h1
+          margin-left: 0
+
+    .main_page
+      .banners,
+      .attention
+        display: none !important
+
+    .content
+      object,
+      .html-part iframe,
+      .galleria-wrapper,
+      .banners
+        display: none !important
+
+    .counter_wrapper,
+    .duration_wrapperi,
+    .white-galleria,
+    .js-simple-jcarousel
+      display: none !important
+
+    .video_preview
+      .glyphicon
+        display: none!important
+
+    .photo
+      .glyphicon
+        display: none !important
+
+    .faculties_departments
+      .faculties
+        .item
+          ul
+            border: 0 !important
+
+            &:after
+              border: 0 !important
+
+
+  /******************************/
+  /******* with font-size *******/
+  /******************************/
+
+  @for $size from 12 through 30
+    &.font-size-#{$size}
+      *
+        font-size: #{$size / 10}rem !important
+        +word-wrap()
+
+      &.color-white,
+      &.color-black,
+      &.color-blue
+        .main_page_statistics
+          .animate
+            font-size: 22px !important
+            border-bottom: 0
+
+            mark
+              font-size: 54px !important

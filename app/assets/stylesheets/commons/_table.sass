@@ -1,0 +1,287 @@
+// Styles for table on div elements
+.alternative-table
+  margin-top: 15px
+
+  .header
+    .header-cell
+      color: #808080
+      text-align: left
+      border: 0
+      background: #e7e7e7
+      font-size: 14px
+      padding: 8px 15px
+
+  .content-row
+    border-bottom: 1px solid #e7e7e7
+
+    &:first-child
+      border-top: 0
+
+    &:last-child
+      border-bottom: 0
+
+    .content-cell
+      padding: 15px
+
+  .gray-text
+    color: #808080
+
+    &.small
+      font-size: 14px
+
+table
+  width: 100%
+  margin-bottom: 10px
+
+  .reset-left-padding
+    padding-left: 0
+
+  .bottom-border
+    border-bottom: 2px solid #d3d3d3
+
+  .reset-top-border
+    border-top: 0
+
+  .reset-bottom-border
+    border-bottom: 0
+
+  thead
+    th, td
+      color: #808080
+      text-align: center
+      border-top: 1px solid #d3d3d3
+      padding: 8px 10px
+
+    &.gray-bg
+      background: #e7e7e7
+      font-size: 14px
+
+      &.light
+        background: #f2f2f2
+
+      th
+        text-align: left
+        border: 0
+
+  tbody
+    th
+      font-size: 14px
+      font-weight: bold
+      border-top: 1px solid #d3d3d3
+      border-bottom: 1px solid #d3d3d3
+      background-color: #f1f1f1
+      padding: 8px 10px
+
+    td
+      border-bottom: 1px solid #d3d3d3
+      padding: 10px 10px
+      vertical-align: top
+
+      &.no-bottom-border
+        border-bottom: 0
+
+      &.reset-left-padding
+        padding-left: 0
+
+
+    .text-center
+      th
+        text-align: center
+
+  &.no_border
+    tbody
+      td
+        border: 0
+
+  .left_border
+    border-left: 1px solid #d3d3d3
+
+  .right_border
+    border-right: 1px solid #d3d3d3
+
+  .title
+    background-color: #FFF
+    border: 0
+    color: #919191
+    font-size: 1.4rem
+
+  .column
+    border-bottom: 1px solid #d3d3d3
+    padding: 6px 0px 6px 0px
+
+    &.left
+      height: 100%
+      vertical-align: top
+      width: 275px
+
+    &.right
+      border-left: 1px solid #d3d3d3
+      padding: 5px 0px 5px 10px
+
+    &.color_title
+      background-color: #d3d3d3
+      padding-left: 15px
+
+  .subheader
+    background-color: #d8dad9
+    color: #000
+    text-align: center
+    font-weight: bold
+    padding: 5px 10px 7px
+    border: 0
+
+    &.second
+      text-align: center
+      background-color: #f2f2f2
+      font-weight: normal
+  p
+    margin-bottom: 0
+
+  &.without-border
+    tr
+      &:last-child
+        td
+          @extend .reset-bottom-border
+
+
+  @media (max-width: $screen-xs-max)
+    thead
+      th, td
+        display: block
+        text-align: left
+        border: 0
+
+      tr
+        th, td
+          padding-top: 0
+          padding-bottom: 0
+
+          &:last-child
+            padding-bottom: 10px
+
+    tbody
+      th, td
+        display: block
+        text-align: left
+        border: 0
+        border-left: none
+
+      tr
+        td
+          padding-top: 0
+          padding-bottom: 0
+
+        &:first-child
+          display: none
+
+      .column
+        border-bottom: 1px solid #d3d3d3
+        padding: 6px 0px 6px 0px
+
+        &.right
+          border-left: none
+          padding: 5px 0px 5px 10px
+
+        &.left
+          height: 100%
+          vertical-align: top
+          width: auto
+          padding-left: 10px
+
+          br
+            +inline-block
+            content: ''
+            width: 5px
+            height: 18px
+
+            &:before
+              display: block
+              content: ', '
+
+          &:first-child
+            padding-top: 10px
+
+          &:last-child
+            padding-bottom: 10px
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+    &.small-responsive
+      thead
+        display: none
+
+        th, td
+          display: block
+          text-align: left
+          border: 0
+
+        tr
+          th, td
+            padding-top: 0
+            padding-bottom: 0
+
+            &:last-child
+              padding-bottom: 10px
+
+      tbody
+        th, td
+          display: block
+          text-align: left
+          border: 0
+
+        tr
+          td
+            padding-top: 0
+            padding-bottom: 0
+
+            br
+              +inline-block
+              content: ''
+              width: 5px
+              height: 18px
+
+            &:first-child
+              padding-top: 10px
+
+            &:last-child
+              padding-bottom: 10px
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+    &.middle-responsive
+      thead
+        display: none
+
+        th, td
+          display: block
+          text-align: left
+          border: 0
+
+        tr
+          th, td
+            padding-top: 0
+            padding-bottom: 0
+
+            &:last-child
+              padding-bottom: 10px
+
+      tbody
+        th, td
+          display: block
+          text-align: left
+          border: 0
+
+        tr
+          td
+            padding-top: 0
+            padding-bottom: 0
+
+            br
+              +inline-block
+              content: ''
+              width: 5px
+              height: 18px
+
+            &:first-child
+              padding-top: 10px
+
+            &:last-child
+              padding-bottom: 10px

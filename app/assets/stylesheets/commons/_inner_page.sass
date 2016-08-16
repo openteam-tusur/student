@@ -1,0 +1,87 @@
+.inner-page-wrapper
+
+  &.with-right-bg
+    @media (max-width: $screen-xs-max)
+      .left-side
+        padding-left: 15px
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+
+      background: transparent image_url('inner-page-sm-bg.png') repeat-y center top
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+      background: transparent image_url('inner-page-md-bg.png') repeat-y center top
+
+    @media (min-width: $screen-lg-min)
+
+      background: transparent image_url('inner-page-lg-bg.png') repeat-y center top
+
+  .right-side
+    margin: 30px 0
+
+    @media (max-width: $screen-xs-max)
+      margin: 0
+
+  .left-side
+    background-color: #fff
+    margin: 30px 0 20px 0
+
+    @media (max-width: $screen-xs-max)
+
+      margin: 0 0 5px
+
+  .map
+    width: 100%
+    margin: 15px 0
+
+    iframe
+      width: 100%
+      background-color: #f2f2f2
+
+  .contacts_wrapper
+    .item
+      margin-bottom: 15px
+
+      p
+        margin-left: 15px
+        font-weight: bold
+
+      .info
+        background-color: #f2f2f2
+        position: relative
+        padding: 10px 15px
+
+        &:before
+          display: block
+          content: ''
+          position: absolute
+          bottom: 100%
+          left: 0
+          width: 0
+          border-top: 1.5rem solid transparent
+          border-left: 1.5rem solid #f2f2f2
+
+      .delimiter
+        margin: 0 15px
+
+    @media (max-width: $screen-xs-max)
+
+      div.item
+
+        .delimiter
+          display: block
+          height: 1px
+          color: #f2f2f2
+          background-color: #f2f2f2
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+
+      div.item
+
+        &:nth-child(2n+1)
+          clear: left
+
+        .delimiter
+          display: block
+          height: 1px

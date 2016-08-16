@@ -1,0 +1,440 @@
+.content
+  font-size: 1.8rem
+  padding-right: 20px
+
+  h1
+    font-family: 'PTSans', 'Verdana', sans-serif
+    margin-top: 0
+    margin-bottom: 15px
+    font-weight: bold
+
+    @media (max-width: $screen-xs-max)
+      font-size: 2.6rem
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+      font-size: 3rem
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+      font-size: 3.6rem
+
+    @media (min-width: $screen-lg-min)
+      font-size: 4rem
+
+  h2
+    font-size: 2.2rem
+    font-weight: normal
+
+    &.blue-officina
+      font-size: 2.4rem
+      font-family: "OfficinaSerifBookSCC", "Verdana", sans-serif
+      margin-top: 0
+      margin-bottom: 15px
+      color: #135a96
+      padding-top: 26px
+
+    &.fio
+      font-size: 2.4rem
+
+  h3
+    font-size: 2rem
+    font-weight: normal
+
+  p
+    margin: 0 0 10px
+    line-height: 27px
+
+  td[style*="text-align: center;"],
+  td[style*="text-align: center"],
+  td[style*="text-align:center;"],
+  td[style*="text-align:center"],
+  p[style*="text-align: center;"],
+  p[style*="text-align: center"],
+  p[style*="text-align:center;"],
+  p[style*="text-align:center"]
+
+    .img-responsive
+      margin-right: auto
+      margin-left: auto
+
+  table
+    p
+      margin: 0 0 5px
+
+  img
+    &.vertical-margin
+      margin: 10px
+
+  .required
+    abbr
+      color: red
+
+  .label
+    font-weight: normal
+
+  .gray-line
+    border-bottom: 1px solid #dadada
+    padding: 10px 0
+    display: block
+
+  ul
+    li
+      position: relative
+      padding-left: 20px
+      margin: 5px 0 5px 10px
+
+      &:before
+        display: block
+        content: '\2013'
+        position: absolute
+        left: 0
+        top: 0
+
+    &.documents
+      li
+        padding-left: 0
+
+        &:before
+          display: none
+
+  ol
+    counter-reset: order
+    padding-left: 35px
+
+  ol > li
+    position: relative
+    margin-bottom: 10px
+
+    &:before
+      color: #fff
+      counter-increment: order
+      content: counter(order)
+      display: block
+      width: 26px
+      height: 22px
+      line-height: 22px
+      position: absolute
+      left: -35px
+      top: 0
+      background: transparent image_url('ol-li-bg.png') no-repeat left top
+      padding-left: 4px
+
+  ol > li
+    &.no_counter
+      &:before
+        content: none
+
+  .page-annotation
+    background-color: #e3e7e6
+    position: relative
+    margin: 0 20px 10px 0
+
+    &.with_img
+      margin: 0 20px 10px 20px
+
+    &:after
+      display: block
+      content: ''
+      width: 2rem
+      height: 100%
+      position: absolute
+      top: -10px
+      right: -20px
+      +skew(0, 135deg)
+      background-color: #e3e7e6
+      z-index: 1
+
+    &:before
+      display: block
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      border-top: 2rem solid white
+      border-right: 2rem solid transparent
+      width: 0
+
+    .information
+      padding: 15px 20px
+
+      p
+        margin-bottom: 0
+
+    img
+      float: left
+      margin: 20px 20px 20px -20px
+      width: 230px
+
+  .visit-card
+    background-color: #e3e7e6
+    position: relative
+    margin: 0 20px 1em 20px
+
+    &:after
+      display: block
+      content: ''
+      width: 2rem
+      height: 100%
+      position: absolute
+      top: -10px
+      right: -20px
+      +skew(0, 135deg)
+      background-color: #e3e7e6
+      z-index: 1
+
+    &:before
+      display: block
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      border-top: 2rem solid white
+      border-right: 2rem solid transparent
+      width: 0
+
+    .portrait
+      float: left
+      margin: 20px 20px 0 -20px
+      max-width: 230px
+
+    .post
+      padding-top: 11px
+      font-size: 1.75em
+      font-weight: 300
+
+    .science-degree
+      font-size: .9em
+      margin-top: 0em
+      font-weight: 300
+      margin-bottom: 2rem
+      position: relative
+
+      &:after
+        display: block
+        position: absolute
+        width: 100%
+        left: 230px
+        content: ''
+        height: 1px
+        background-color: white
+        margin-top: 1rem
+        margin-bottom: 1rem
+
+    .contact-information
+      padding-bottom: 2rem
+
+      strong
+        font-weight: bolder
+
+  .text-annotation-italic
+    font-style: italic
+    font-size: 24px
+
+  .img-with-description
+    p
+      font-size: 14px
+      padding-top: 5px
+      color: grey
+      font-family: 'PTSans'
+
+  .double-line-info
+    hr
+      height: 2px
+      background-color: black
+    p
+      font-family: 'PTSans'
+      font-size: 20px
+
+  .left-vertical-line-note
+    border-left: 5px solid #ebebeb
+    margin-left: 15px
+    padding-left: 10px
+    margin-bottom: 10px
+
+  blockquote
+    color: #818181
+    line-height: 2.3rem
+    background-color: #f7f7f7
+    padding: 20px
+    border-left: 2px solid #26558E
+    font-style: italic
+    display: inline-block
+    font-size: 16px
+    font-family: Georgia
+
+    p
+      margin-bottom: 10px
+
+    &.align-right
+      width: 40%
+      float: right
+
+    ul
+      padding-left: 20px
+      list-style-type: circle
+
+      li
+        padding-left: 0
+
+        &:before
+          content: ''
+    em
+      font-size: 18px
+
+  .gray-text
+    color: #808080
+
+    &.small
+      font-size: 14px
+
+  .ul-rhombus
+    margin-bottom: 25px
+
+    li
+      &:before
+        content: '\25A0'
+        transform: rotate(45deg)
+        color: #025DAE
+
+    ol
+      list-style: decimal outside
+      li
+        &:before
+          content: none
+
+  .small-icons
+    img
+      vertical-align: initial
+      margin-right: 10px
+
+  .img-center
+    display: block
+    margin: 0 auto
+
+  .video_preview
+    position: relative
+    width: 250px
+    float: left
+    margin-right: 15px
+
+    .glyphicon-play-circle
+      top: initial
+      color: #fff
+      font-size: 2.0rem
+      display: block
+      position: absolute
+      left: 5px
+      bottom: 5px
+      top: auto
+      +opacity(0.7)
+      +border-radius(5px)
+      background-color: #000
+      padding: 5px
+      +transition(0.1s)
+
+    &:hover .glyphicon
+      font-size: 2.8rem
+      +opacity(1)
+
+
+  .search_results
+    ul
+      li
+        padding: 1px 0
+        margin: 0px
+
+        &:before
+          content: ""
+
+        em
+          background-color: #CDE1FE
+
+  .cite
+    background-color: #e3e7e6
+    position: relative
+    margin: 0 20px 20px 0
+    padding: 20px
+
+    &:after
+      display: block
+      content: ''
+      width: 2rem
+      height: 100%
+      position: absolute
+      top: -10px
+      right: -20px
+      +skew(0, 135deg)
+      background-color: #e3e7e6
+      z-index: 1
+
+    &:before
+      display: block
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      border-top: 2rem solid white
+      border-right: 2rem solid transparent
+      width: 0
+
+    p
+      margin-bottom: 0
+
+  @media (max-width: $screen-xs-max)
+
+    .nobr
+      white-space: normal
+
+    .img-responsive
+      &.float_left,
+      &.float_right
+        float: none !important
+        margin-left: 0
+        margin-right: 0
+
+    .page-annotation
+      margin-left: 0 !important
+      padding-top: 1px
+
+      img
+        display: block
+        float: none !important
+        margin-left: 20px !important
+        margin-bottom: 5px !important
+
+        &:before
+          display: block
+          width: 20px
+          height: 20px
+          background-color: #fff
+
+    .cite
+      margin-right: 0px
+
+    .visit-card
+      margin-right: 40px
+      padding-left: 20px
+
+      .portrait
+        margin-left: 1px
+
+      .science-degree
+        &:after
+          left: 253px
+
+  .youtube
+    margin-bottom: 10px
+
+  .curve-header
+    .title
+      span
+        margin-left: 5px
+
+  .no-wrap-words
+    white-space: nowrap
+
+body.locale-ru .content
+
+  @media (max-width: $screen-xs-max)
+
+    *
+      +word-wrap()
