@@ -1,0 +1,67 @@
+<div class='news photogalleries'>
+  <% if object.items.any? %>
+    <div class='row'>
+      <% object.items.each do |item| %>
+        <div class='col-lg-6 col-xs-12 photogallery_item'>
+          <div class='row'>
+            <div class='col-lg-10 col-md-10 col-sm-9 col-xs-12 preview1'>
+              <% image = item.images.first %>
+
+              <%= link_to item.link do %>
+                <%= image_tag image.url.gsub(/\/\d+-\d+\//, '/750-541!mn/'), size: '750x541',
+                  title: image.description,
+                  alt: image.description.presence || strip_tags(item.title),
+                  class: 'img-responsive' %>
+              <% end %>
+
+              <div class='counter_wrapper'>
+                <span class='glyphicon glyphicon-camera'></span>
+                <span class="counter"><%= item.images.count %></span>
+              </div>
+            </div>
+
+            <div class='col-lg-2 col-md-2 col-sm-3 hidden-xs preview2'>
+              <% (1..4).each do |index| %>
+                <div class='img'>
+                  <% image = item.images[index] %>
+                  <%= link_to item.link do %>
+                    <%= image_tag image.url.gsub(/\/\d+-\d+\//, '/750-541!mn/'), size: '750x541',
+                      title: image.description,
+                      alt: image.description.presence || strip_tags(item.title),
+                      class: 'img-responsive' %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+          <div class='row'>
+            <div class='col-lg-12 col-xs-12 description'>
+              <%= link_to item.title.truncate(65), item.link, :title => item.title %>
+              <div class='date'><%= l Date.parse(item.since), :format => :long %></div>
+            </div>
+          </div>
+        </div>
+
+        <% if item.annotation %>
+          <div class='annotation'>
+            <%= item.annotation.html_safe %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <h4><%= I18n.t('not_found') %></h4>
+  <% end %>
+
+  <div class='row'>
+    <div class='col-xs-12 text-center'>
+      <% if object.pagination %>
+        <% @array = object.items %>
+        <% @array = Kaminari.paginate_array(@array, total_count: object.pagination.total_count).page(object.pagination.current_page).per(object.pagination.per_page) %>
+
+        <%= paginate @array, window: 2 %>
+      <% end %>
+    </div>
+  </div>
+</div>

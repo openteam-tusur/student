@@ -1,0 +1,10 @@
+<div class='right-navigation'>
+  <div class='js-toggle-button toggle-button visible-xs'>
+    <span class='glyphicon glyphicon-option-vertical'></span>
+  </div>
+  <% if object.values.first.grouping_children.present? %>
+    <%= render :partial => 'right_navigation_with_groups', :locals => { :object => object } %>
+  <% else %>
+    <%= render_cms_navigation object.try(:values).try(:first).try(:[], 'children') %>
+  <% end %>
+</div>

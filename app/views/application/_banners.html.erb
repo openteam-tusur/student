@@ -1,0 +1,11 @@
+<% if @banners && @banners.content %>
+  <div class='banners darkgray-bg hidden-xs'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <%= @banners.content.body.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

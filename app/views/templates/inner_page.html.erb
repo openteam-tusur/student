@@ -1,0 +1,60 @@
+<% content_for :page_title, @content.part_title if @content.present? && %w[NewsItemPart YoutubeItemPart].include?(@content.type) %>
+
+<% cache_unless request.host.match(Settings['app.nocache_host'].to_s),
+                request.fullpath.to_s.parameterize('_').gsub('-', '_'),
+                expires_in: 5.minutes do %>
+
+  <div class='inner-page-wrapper<%= right_side_present? ? ' with-right-bg' : nil  %>'>
+    <div class='container'>
+      <div class='row'>
+        <div class='<%= right_side_present? ? 'col-lg-9 col-md-9 col-sm-8 col-xs-12' : 'col-xs-12' %> left-side'>
+          <%= render_partial_for_region @breadcrumbs if @breadcrumbs.present? %>
+
+          <div class='content index'>
+
+            <% if @content && @content.template != 'events_item_part' %>
+              <h1><%= @content.try(&:part_title).presence || @page_title %></h1>
+            <% end %>
+
+            <% if @page.slug == 'contact-information' %>
+              <div class='address'>
+                <strong>Address</strong>: 40 Lenina Prospect, Tomsk, Russia
+              </div>
+              <div class='map'>
+                <iframe width='850' height='350' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?q=%D1%82%D1%83%D1%81%D1%83%D1%80&key=AIzaSyAEQnlSHzvQyGEbEhlpl1s5FRhcKxIbh1E' allowfullscreen></iframe>
+              </div>
+            <% end %>
+
+            <%= render_partial_for_region(@content) if @content.present? %>
+
+            <% if @gallery_content.present? %>
+              <%= render partial: 'subdivision_gallery', locals: { gallery_content: @gallery_content } %>
+            <% end %>
+          </div>
+        </div>
+
+        <% if right_side_present? %>
+          <div class='col-lg-3 col-md-3 col-sm-4 col-xs-12 right-side'>
+            <% if (@right_navigation_without_title.present? || @right_navigation_with_title.present?) && @content.present? &&
+                  (@content.type == 'NewsListPart' || @content.type == 'NewsItemPart' || @content.type == 'EventsListPart') %>
+              <%= render partial: 'regions/inner_right_navigation_with_archive_part' %>
+            <% else %>
+              <%= render_partial_for_region(@right_navigation_with_title, 'inner_right_with_title') if @right_navigation_with_title.present? %>
+              <%= render_partial_for_region(@right_navigation_without_title, 'inner_right_without_title') if @right_navigation_without_title.present? && @right_navigation_with_title.blank? %>
+            <% end %>
+
+            <%= render_partial_for_region(@right_links, 'inner_right_links') if @right_links.present? %>
+            <%= render_partial_for_region(@right_contacts, 'inner_right_contacts') if @right_contacts.present? %>
+            <%= render_partial_for_region(@right_documents, 'inner_right_documents') if @right_documents.present? %>
+            <%= render_partial_for_region(@right_advert, 'inner_right_advert') if @right_advert.present? %>
+            <%= render_partial_for_region(@right_html_part, 'inner_right_html_part') if @right_html_part.present? %>
+            <%= render_partial_for_region(@right_news_part, 'inner_right_news_part') if @right_news_part.present? %>
+            <%= render_partial_for_region(@right_events, 'inner_right_events') if @right_events.present? %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>

@@ -1,5 +1,14 @@
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+class ApplicationController < CommonController
+
+  protect_from_forgery :with => :exception
+
+  include Cmsable
+
+  private
+
+  def remote_url
+    request_path, parts_params = request.fullpath.split('?')
+
+    ["#{cms_address}#{request_path.gsub('//', '/').split('/').compact.join('/')}.json", parts_params].compact.join('?')
+  end
 end

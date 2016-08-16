@@ -1,0 +1,57 @@
+ru:
+  app:
+    title: 'Сайт для студентов ТУСУР'
+    cecutient: 'Версия для слабовидящих'
+    cecutient_normal: 'Обычная версия'
+    address: '634050, г. Томск, пр. Ленина, 40'
+    phone: '(3822)&nbsp;51-05-30'
+    fax: '(3822)&nbsp;51-32-62, 52-63-65'
+    openteam: 'Разработка и дизайн'
+    questions: 'Интересующие вас вопросы можно задать по телефону (3822) 41-38-87 или в'
+    private_office: 'личном кабинете'
+    social: 'Мы в социальных сетях'
+    vk: 'ТУСУР ВКонтакте'
+    fb: 'ТУСУР в Фейсбуке'
+    twitter: 'ТУСУР в Твиттере'
+    instagram: 'ТУСУР в Инстаграм'
+    youtube: 'ТУСУР в YouTube'
+    ask_question: 'Задать вопрос'
+    sign_in: 'Кабинет ТУСУР'
+    notifications: 'Уведомления'
+    empty_search_results: 'По вашему запросу ничего не найдено'
+    sitemap_link: 'Карта сайта'
+    manage: 'Управление'
+    dashboard: 'Панель управления'
+    permissions: 'Управление правами'
+    people: 'Участники'
+    actions: 'Действия'
+
+  top_header:
+    sections_for: 'Разделы для'
+    sites_tusur: 'Сайты ТУСУР'
+    close: 'Закрыть'
+
+  search_placeholder: 'Поиск'
+
+  old_site_version: 'Старая версия сайта'
+
+  not_found: 'Информация отсутствует'
+
+  locale:
+    ru: 'РУС'
+    en: 'ENG'
+
+  mlt:
+    title: 'Похожие материалы по теме'
+
+  address:       'Адрес: '
+  phone:         'Тел.: '
+  emails:        'E-mail: '
+  working_hours: 'Время работы: '
+
+  additional_info:
+    skype: 'Skype: '
+    icq: 'ICQ: '
+    site: 'Сайт: '
+    jabber: 'Jabber: '
+    jid: 'Jabber: '

@@ -1,0 +1,32 @@
+<div class='footer'>
+
+  <div class='container'>
+    <div class='row'>
+
+      <div class='col-xs-12 copyrights'>
+        <p>
+          <%= I18n.t('app.title') %>.
+        </p>
+        <p>
+          <span class='glyphicon glyphicon-map-marker'></span>
+          <%= I18n.t('app.address').html_safe %>,
+          <span class='glyphicon glyphicon-phone-alt'></span>
+          <%= I18n.t('app.phone').html_safe %>,
+          <span class='glyphicon glyphicon-print'></span>
+          <%= I18n.t('app.fax').html_safe %>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<% if Rails.env.development? %>
+  <div class='development-json'>
+    <%= link_to 'JSON', @link_to_json, :target => '_blank' %>
+  </div>
+  <div class='development-resolution'>
+  </div>
+<% end %>

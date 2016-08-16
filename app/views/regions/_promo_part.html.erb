@@ -1,0 +1,92 @@
+<div class='promo <%= locale %>'>
+  <div class='controls hidden-sm hidden-xs'>
+    <div class='container'>
+      <div class='links'><!-- work by js --> </div>
+
+      <div class='choose'>
+        <a href='#' class='js-prev prev'><span class='glyphicon glyphicon-chevron-left'></span></a>
+        <a href='#' class='js-next next'><span class='glyphicon glyphicon-chevron-right'></span></a>
+      </div>
+
+    </div>
+  </div>
+
+  <ul class='slider'>
+    <% object.slides.each_with_index do |slide, index| %>
+      <li class='slide-<%= index + 1%>'>
+        <div class='container hidden-xs'>
+          <div class='row'>
+            <% if slide.image_url.present? %>
+              <% if slide.video_url.present? %>
+                <div class='slide-image js-colorbox-video cursor-pointer' data-video='<%= slide.video_url %>'>
+                  <%= image_tag slide.image_url,
+                                size: "#{slide.image_url.match(/\/(\d+)-(\d+)\//){ "#{$1}x#{$2}" }}",
+                                class: 'img-responsive',
+                                alt: slide.title %>
+                </div>
+              <% else %>
+                <div class='slide-image'>
+                  <%= image_tag slide.image_url,
+                                size: "#{slide.image_url.match(/\/(\d+)-(\d+)\//){ "#{$1}x#{$2}" }}",
+                                class: 'img-responsive',
+                                alt: slide.title %>
+                </div>
+              <% end %>
+            <% end %>
+
+            <div class='row'>
+              <div class='col-xs-12'>
+                <h1>
+                  <% if slide.url.present? %>
+                    <%= link_to slide.title, slide.url %>
+                  <% else %>
+                    <%= slide.title %>
+                  <% end %>
+                </h1>
+                <div class='text text-white'>
+                  <%= slide.annotation.html_safe %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class='container visible-xs mobile-description'>
+          <% if slide.image_url.present? %>
+            <% if slide.video_url.present? %>
+              <div class='slide-image js-colorbox-video cursor-pointer' data-video='<%= slide.video_url %>'>
+                <%= image_tag slide.image_url,
+                              size: "#{slide.image_url.match(/\/(\d+)-(\d+)\//){ "#{$1}x#{$2}" }}",
+                              class: 'img-responsive',
+                              alt: slide.title %>
+              </div>
+            <% else %>
+              <div class='slide-image'>
+                <%= image_tag slide.image_url,
+                              size: "#{slide.image_url.match(/\/(\d+)-(\d+)\//){ "#{$1}x#{$2}" }}",
+                              class: 'img-responsive',
+                              alt: slide.title %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class='row'>
+            <div class='col-xs-12 text-white'>
+              <h1>
+                <% if slide.url.present? %>
+                  <%= link_to slide.title, slide.url %>
+                <% else %>
+                  <%= slide.title %>
+                <% end %>
+              </h1>
+              <div class='description'>
+                <%= slide.annotation.html_safe %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

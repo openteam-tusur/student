@@ -1,0 +1,64 @@
+<% raise ActionController::RoutingError.new('Not Found') if object.blank? %>
+<div class='video_item_wrapper'>
+  <div class='youtube_video_date'><%= l Date.parse(object.since), :format => :long %></div>
+  <div class='video_item'>
+    <div class='row'>
+      <div class='col-xs-12 description'>
+        <%= object.body.to_s.gsub('...', '') %>
+      </div>
+
+
+      <div class='col-xs-12 video'>
+        <iframe width='820' class='visible-lg' height='461' src='https://www.youtube.com/embed/<%= object.youtube_code %>' frameborder='0' allowfullscreen></iframe>
+        <iframe width='705' class='visible-md' height='396' src='https://www.youtube.com/embed/<%= object.youtube_code %>' frameborder='0' allowfullscreen></iframe>
+        <iframe width='450' class='visible-sm' height='253' src='https://www.youtube.com/embed/<%= object.youtube_code %>' frameborder='0' allowfullscreen></iframe>
+        <iframe width='270' class='visible-xs' height='151' src='https://www.youtube.com/embed/<%= object.youtube_code %>' frameborder='0' allowfullscreen></iframe>
+      </div>
+
+      <%= content_tag :div, :class => 'social-likes' do %>
+        <div class='row'>
+          <div class='col-xs-12'>
+            <%= render :partial => 'commons/likes' %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if object.more_like_this.present? %>
+        <div class='col-xs-12 related_video'>
+          <h4>Похожие материалы по теме</h4>
+
+          <div class='row'>
+            <% object.more_like_this.each do |video| %>
+              <div class='col-lg-3 col-md-3 col-sm-6 col-xs-12 related-video-item'>
+
+                <% if video.youtube_code.present? %>
+                  <%= link_to video.link, class: 'image-link' do %>
+                    <% cache "youtube_large_thumbnail_#{video.youtube_code}", expires_in: 1.days do %>
+                      <%= image_tag(youtube_large_thumbnail(video.youtube_code), class: 'img-responsive') %>
+                    <% end %>
+
+                    <div class='duration_wrapper'>
+                      <span class='glyphicon glyphicon-play-circle'></span>
+                      <% cache "youtube_duration_video_#{video.youtube_code}", expires_in: 1.days do %>
+                        <span class='duration'><%= youtube_duration_video(video.youtube_code) %></span>
+                      <% end %>
+                    </div>
+
+                  <% end %>
+
+                  <div class='description'>
+                    <%= link_to video.title.truncate(50), video.link %>
+                    <p class='date'><%= l Date.parse(video.since), :format => :long %></p>
+                  </div>
+
+                <% end %>
+
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

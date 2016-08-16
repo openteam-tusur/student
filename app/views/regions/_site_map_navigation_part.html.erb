@@ -1,0 +1,3 @@
+<div class='sitemap'>
+  <%= render_cms_navigation object.try(:values).try(:first).try(:[], 'children') %>
+</div>

@@ -1,14 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Student</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html lang='<%= I18n.locale %>'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-<%= yield %>
+    <title><%= content_for?(:page_title) ? yield(:page_title).squish.html_safe : (@alternative_title.presence || @page_title).try(:squish) %></title>
+    <%= favicon_link_tag %>
+    <%= canonical_url.to_s.html_safe %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <!--[if lt IE 9]>
+    <%= stylesheet_link_tag    'stop_ie/application' %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-1.12.3.min.js' %>
+    <%= javascript_include_tag 'stop_ie/application' %>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag 'html5.js' %>
+    <%= javascript_include_tag 'respond.js' %>
+    <![endif]-->
+    <%= csrf_meta_tags %>
+    <%= meta_tags %>
+    <%= meta_social(@content) %>
+    <% if entry_date %>
+      <meta name='entry_date' content='<%= entry_date %>'>
+    <% end %>
+  </head>
+  <body class='locale-<%= I18n.locale %>'>
+    <%= render partial: 'cecutient_panel' %>
 
-</body>
+    <div class='page_wrapper'>
+      <div class='overlay js-overlay hidden-xs'></div>
+      <%= render partial: 'public_navigation' %>
+      <% if notice || alert %>
+        <div class='container margin-top'>
+          <%= render partial: 'flash' %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <% cache_unless request.host.match(Settings['app.nocache_host'].to_s),
+                    "#{I18n.locale}/footer",
+                    expires_in: 20.minutes do %>
+      <%= render partial: 'footer' %>
+      <%= render partial: 'yandex_metrika' if Rails.env.production? %>
+    <% end %>
+  </body>
 </html>

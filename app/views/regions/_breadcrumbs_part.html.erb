@@ -1,0 +1,11 @@
+<% collection = extend_object.to_a %>
+<% current = collection.pop %>
+
+<% if collection.any? %>
+  <div class='breadcrumbs noindex'>
+    <% collection.each do |item| %>
+      <%= link_to(item.title.html_safe, item.external_link.presence || item.path) %> /
+    <% end %>
+    <%= current.title.html_safe %>
+  </div>
+<% end %>

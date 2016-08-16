@@ -1,0 +1,21 @@
+<% cache_unless request.host.match(Settings['app.nocache_host'].to_s),
+                "#{request.fullpath.to_s.parameterize('_').gsub('-', '_')}_fullscreen_navigation",
+                expires_in: 20.minutes do %>
+  <%= render partial: 'application/navigation/fullscreen' %>
+<% end %>
+<%= render partial: 'application/navigation/top_navigation' %>
+<%= render partial: 'application/navigation/subtop_navigation' %>
+
+<% cache_unless request.host.match(Settings['app.nocache_host'].to_s),
+                "#{request.fullpath.to_s.parameterize('_').gsub('-', '_')}_main_navigation",
+                expires_in: 20.minutes do %>
+  <% if @main_navigation.present? %>
+    <div class='container-fluid main-navigation js-main-navigation hidden-xs'>
+      <div class='container'>
+        <ul class='nav nav-pills col-sm-12'>
+          <%= render :partial => 'application/public_navigation_items' %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+<% end %>

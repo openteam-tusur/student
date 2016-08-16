@@ -1,0 +1,58 @@
+<% raise ActionController::RoutingError.new('Not Found') if object.blank? %>
+
+<%= content_tag :div, :class => 'news-item' do %>
+  <div class='date'><%= l Date.parse(object.since), :format => :long %></div>
+
+  <div class="google-gallery js-google-gallery">
+  <ul>
+    <% object.images.each do |image| %>
+      <li class="item">
+      <a href="#"
+        data-description="<%= image.description %>"
+        data-fullimg="<%= image.url.gsub(/\/(\d+)-(\d+)\//){ "/847-#{847 * $2.to_i / $1.to_i}!mn/" } %>">
+          <%= image_tag(image.url.gsub(/\/\d+-\d+\//, '/300-216!mn/'),
+                          :size => '300x216',
+                          :alt => image.description,
+                          :class => 'thumbnail img-responsive',
+                          :data => { :big => image.url,
+                                     :title => image.description }) %>
+        </a>
+
+        <div class="full-image-box">
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+
+
+  <%= content_tag :div, :class => 'social-likes' do %>
+    <div class='row'>
+      <div class='col-xs-12'>
+        <%= render :partial => 'commons/likes' %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if object.more_like_this.present? %>
+    <h4><%= I18n.t('mlt.title') %></h4>
+    <div class='flex-more-like-this'>
+
+      <% object.more_like_this.each do |item| %>
+          <div class='item'>
+            <% if has_images?(item) %>
+              <div class='preview'>
+                <% image = item.images.first.thumbnail ? item.images.first.thumbnail : item.images.first %>
+                <%= link_to item.link, class: 'hidden-xs' do image_tag image.url.gsub(/\/\d+-\d+\//, '/189-125!mn/'), :title => image.description, :width => 189, :height => 125, :alt => image.description.presence || strip_tags(item.title) end %>
+                <%= link_to item.link, class: 'visible-xs img-responsive' do image_tag image.url.gsub(/\/\d+-\d+\//, '/350-224!mn/'), :title => image.description, :alt => image.description.presence || strip_tags(item.title) end %>
+              </div>
+            <% end %>
+            <div class='text-block'>
+              <%= link_to has_images?(item) ? item.title.truncate(55) : item.title, item.link, :title => item.title %>
+            </div>
+            <div class='date'><%= l Date.parse(item.since), :format => :long %></div>
+         </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

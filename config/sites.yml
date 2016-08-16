@@ -1,0 +1,42 @@
+ru:
+  main_sites:
+    phones:
+      title: 'Телефонный справочник'
+      link: 'https://directory.tusur.ru'
+
+    edu:
+      title: 'Научно-образовательный портал'
+      link: 'https://edu.tusur.ru'
+
+    timetable:
+      title: 'Расписание занятий'
+      link: 'https://timetable.tusur.ru'
+
+    attendance:
+      title: 'Журнал посещаемости'
+      link: 'https://attendance.tusur.ru'
+
+    radioelektronik:
+      title: 'Газета &laquo;Радиоэлектроник&raquo;'
+      link: 'http://re.tusur.ru'
+
+  additional_sites:
+    tusur:
+      title: 'Официальный сайт'
+      link: 'https://tusur.ru'
+
+    abiturients:
+      title: 'Абитуриентам'
+      link: 'https://abiturient.tusur.ru/'
+
+    students:
+      title: 'Студентам'
+      link: 'https://tusur.ru/ru/studentam'
+
+    magistrants:
+      title: 'Магистрантам'
+      link: 'https://magistrant.tusur.ru'
+
+    staff:
+      title: 'Сотрудникам'
+      link: 'https://tusur.ru/ru/sotrudnikam'

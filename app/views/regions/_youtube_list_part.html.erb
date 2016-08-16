@@ -1,0 +1,41 @@
+<div class='youtube_video_gallery_wrapper'>
+  <% if object.items.any? %>
+    <div class='row'>
+
+      <% object.items.each do |video| %>
+        <div class='col-lg-4 col-sm-6 col-md-4 col-xs-12 video-item'>
+          <%= link_to video.link, class: 'image-link' do %>
+            <% cache "youtube_large_thumbnail_#{video.youtube_code}", expires_in: 1.days do %>
+              <%= image_tag(youtube_large_thumbnail(video.youtube_code), class: 'img-responsive') %>
+            <% end %>
+          <% end %>
+
+          <div class='duration_wrapper'>
+            <span class='glyphicon glyphicon-play-circle'></span>
+            <% cache "youtube_duration_video_#{video.youtube_code}", expires_in: 1.days do %>
+              <span class='duration'><%= youtube_duration_video(video.youtube_code) %></span>
+            <% end %>
+          </div>
+
+          <div class='description'>
+            <%= link_to video.title.truncate(45) , video.link %>
+
+            <div><span class='date'><%= l Date.parse(video.since), :format => :long %></span></div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+
+  <div class='row'>
+    <div class='col-xs-12 text-center'>
+      <% if object.pagination %>
+        <% @array = object.items %>
+        <% @array = Kaminari.paginate_array(@array, :total_count => object.pagination.total_count).page(object.pagination.current_page).per(object.pagination.per_page) %>
+
+        <%= paginate @array, :outer_window => 3 %>
+      <% end %>
+    </div>
+  </div>
+</div>

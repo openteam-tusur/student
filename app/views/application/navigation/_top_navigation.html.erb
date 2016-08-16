@@ -1,0 +1,89 @@
+<div class='container-fluid navbar-fixed-top top_header'>
+  <div class='header'>
+    <div class="container">
+      <div class='row'>
+
+        <% cache_unless request.host.match(Settings['app.nocache_host'].to_s),
+                        "#{request.fullpath.to_s.parameterize('_').gsub('-', '_')}_top_left_navigation",
+                        expires_in: 20.minutes do %>
+          <div class='col-lg-9 col-md-9 col-sm-8 col-xs-6 left-side'>
+
+            <div class='image-menu js-image-menu hidden-sm hidden-xs'>
+              <%= image_tag 'menu_list.png' %>
+            </div>
+
+            <ul class='sites sites_for'>
+              <% Settings["#{I18n.locale}.additional_sites"].each do |slug, item| %>
+                <li>
+                  <%= link_to item['title'], item['link'], target: item['link'].match(/^https?/) ? :_blank : nil %>
+                </li>
+              <% end %>
+            </ul>
+
+            <ul class='sites dropdown_sites_for dropdown'>
+              <li class='dropdown js-init-overlay js-more-overlay'>
+                <div class='dropdown-toggler'>
+                  <%= I18n.t('top_header.sections_for') %><span class='caret'></span>
+                </div>
+                <ul class='dropdown-inside dropdown-menu'>
+                  <% Settings["#{I18n.locale}.additional_sites"].each do |slug, item| %>
+                    <li>
+                      <%= link_to item['title'], item['link'], target: item['link'].match(/^https?/) ? :_blank : nil %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class='sites dropdown_sites_tusur dropdown'>
+              <li class='dropdown js-init-overlay js-more-overlay'>
+                <div class='dropdown-toggler'>
+                  <%= I18n.t('top_header.sites_tusur') %><span class='caret'></span>
+                </div>
+                <ul class='dropdown-inside dropdown-menu'>
+                  <% Settings["#{I18n.locale}.main_sites"].each do |slug, item| %>
+                    <li>
+                      <%= link_to item['title'].html_safe, item['link'], target: item['link'].match(/^https?/) ? :_blank : nil %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+        <% end %>
+
+        <div class='col-lg-3 col-md-3 col-sm-4 col-xs-6'>
+          <ul class='nav navbar-nav navbar-right auth_block'>
+            <% if user_signed_in? %>
+              <% begin %>
+                <li class='notification_icon'>
+                  <%= link_to "#{Settings['profile.url']}/notifications", :class => 'notifications', :title => I18n.t('app.notifications') do %>
+                    <% if current_user.respond_to?(:unreaded_notifications) && current_user.unreaded_notifications.to_i > 0 %>
+                      <span class='counter'>+<%= current_user.unreaded_notifications %></span>
+                    <% end %>
+                    <%= image_tag 'mail.png', :width => 16, :height => 16, :alt => 'Unreaded notifications' %>
+                  <% end %>
+                </li>
+              <% rescue %>
+              <% end %>
+              <li class='dropdown'>
+                <div class='dropdown-toggle login' data-toggle='dropdown'>
+                  <span class='current_user truncated'>
+                    <%= image_tag current_user.avatar_url, :width => 24, :height => 24 %><%= current_user.short_name %>
+                    <b class='caret'></b>
+                  </span>
+                </div>
+                <%= current_user.menu_list %>
+              </li>
+            <% else %>
+              <li class='sign_in'>
+                <%= link_to I18n.t('app.sign_in'), sign_in_url %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

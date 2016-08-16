@@ -1,0 +1,29 @@
+<% content_for :page_title, t('app.title') %>
+
+<% cache_unless request.host.match(Settings['app.nocache_host'].to_s),
+                request.fullpath.to_s.parameterize('_').gsub('-', '_'),
+                expires_in: 5.minutes do %>
+
+  <div class='container main_page'>
+
+    <% if @secondary_navigation.present? %>
+      <div class='container-fluid secondary_navigation_wrapper'>
+        <div class='container hidden-xs'>
+          <div class='row'>
+            <div class='secondary_navigation col-xs-12 col-sm-12 col-md-12'>
+              <!--noindex-->
+              <%= render_partial_for_region(@secondary_navigation, 'secondary') %>
+              <!--/noindex-->
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class='content'>
+      <%= render_partial_for_region(@content) if @content %>
+      <%= render_partial_for_region(@banners) if @banners %>
+    </div>
+
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<ul>
+  <% object.values.first.grouping_children.each do |key, value| %>
+    <%= content_tag :li, :class => value.children.map(&:selected).include?(true) ? 'active' : nil do %>
+      <%= link_to value.title, value.children.first.path %>
+
+      <ul>
+        <% value.children.each do |child| %>
+          <li class="<%= 'active' if child.selected %>">
+            <%= render_link_for_navigation(nil, child) %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <% if object.values.first.try(:children).try(:any?) %>
+    <% object.values.first.children.each do |key, value| %>
+      <%= content_tag :li, :class => value.selected ? 'active' : nil do %>
+        <%= render_link_for_navigation(nil, value) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
