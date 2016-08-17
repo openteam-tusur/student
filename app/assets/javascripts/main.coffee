@@ -1,5 +1,7 @@
 $ ->
 
+  Sugar.extend()
+
   init_white_galleria() if $('.js-white-galleria').length || $('.js-simple-white-galleria').length
   init_google_gallery() if $('.js-google-gallery').length
   init_jcarousel_slider() if $('.jcarousel').length || $('.js-simple-jcarousel').length

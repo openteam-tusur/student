@@ -1,6 +1,7 @@
 require 'active_support/concern'
-require 'restclient/components'
 require 'rack/cache'
+require 'rest-client'
+require 'restclient/components'
 
 module Cmsable
 
@@ -9,6 +10,7 @@ module Cmsable
   included do
     before_action :prepare_locale
     before_action :detect_robots_in_development if Rails.env.development?
+    before_action :check_country
     before_action :load_cms_data
   end
 
@@ -17,6 +19,26 @@ module Cmsable
   def prepare_locale
     locale = request.path.split('/').second.to_s.to_sym
     I18n.locale = I18n.available_locales.include?(locale) ? locale : :ru
+  end
+
+  def check_country
+    return unless request.fullpath.match(/^\/$/)
+
+    return if remote_ip == '127.0.0.1' || request.user_agent.to_s.match(/\(.*https?:\/\/.*\)/)
+
+    geo_data = GeoIP.new(Rails.root.join('data', 'GeoLiteCity.dat'))
+
+    country =
+      request.env['HTTP_ACCEPT_LANGUAGE'].to_s.scan(/^[a-z]{2}/).first.to_s.upcase.presence ||
+      geo_data.city(remote_ip).try(:country_code2)
+    Rails.logger.info "Country: #{country}"
+    timezone = geo_data.city(remote_ip).try(:timezone)
+    Rails.logger.info "Timezone: #{timezone}"
+    redirect_to '/en' if country != 'RU' && I18n.locale != :en
+  end
+
+  def remote_ip
+    request.remote_ip || nil
   end
 
   def load_cms_data
@@ -36,7 +58,6 @@ module Cmsable
     @page_meta = page.meta
     @link_to_json = remote_url
 
-
     render "templates/#{page.template}" unless page.template == 'on_client'
   end
 
@@ -47,7 +68,7 @@ module Cmsable
     puts "Current locale: #{I18n.locale}"
     puts "Params: #{params}"
     puts "<---"
-    puts "\n\n"
+    puts "\n"
 
     render nothing: true, status: :forbidden and return if request.user_agent.to_s.match(/\(.*https?:\/\/.*\)/)
   end
@@ -94,14 +115,23 @@ module Cmsable
     end
   end
 
+  def transliterate_remote_url
+    Russian.transliterate URI.decode(remote_url).parameterize('_').gsub('-', '_')
+  end
+
+  def cache_timeout
+    return 1.minutes if Rails.env.development?
+    return 5.minutes if Rails.env.production?
+  end
+
   def load_rest_request_json
-    if request.host.match(Settings['app.nocache_host'].to_s) || Rails.env.development?
+    if (defined?(request) && request.host.match(Settings['app.nocache_host'].to_s)) || Rails.env.development?
       result = String.new(rest_request.to_json)
     else
-      result = Rails.cache.fetch(remote_url) do
+      result = Rails.cache.fetch(transliterate_remote_url) do
         String.new(rest_request.to_json)
       end
-      if Time.zone.now - DateTime.parse(JSON.load(result).try(:[], 'updated_at')) > 5.minutes
+      if Time.zone.now - DateTime.parse(JSON.load(result).try(:[], 'updated_at')) > cache_timeout
         CacheWorker.perform_async(remote_url)
       end
     end

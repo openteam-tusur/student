@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'auth_client', git: 'https://github.com/openteam-tusur/auth_client'
 gem 'auth_redis_user_connector', git: 'https://github.com/openteam-tusur/auth_redis_user_connector'
-gem 'auto_html'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'compass-rails'
@@ -19,13 +18,15 @@ gem 'rack-cache'
 gem 'rack-utf8_sanitizer'
 gem 'rails', '~> 4.2.6'
 gem 'redis-session-store'
-gem 'rest-client'
+gem 'rest-client', '~> 1.8.0'
 gem 'rest-client-components'
 gem 'russian'
 gem 'sass', '3.4.19'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sidekiq'
 gem 'simple_form'
+gem 'sinatra', require: nil
 gem 'sitemap_generator'
 gem 'sqlite3'
 gem 'stop_ie'
@@ -52,6 +53,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'openteam-capistrano', '~> 1.0.11'
   gem 'spring'
 end
-

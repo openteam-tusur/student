@@ -1,12 +1,4 @@
 module ContentHelper
-  include AutoHtml
-
-  def auto_html_for(content)
-    auto_html content do
-      youtube(:width => 640, :height => 360)
-      vimeo(:width => 640, :height => 360)
-    end
-  end
 
   def replace_content_for_employment(from_html, to_html)
     doc = Nokogiri::HTML::DocumentFragment.parse(from_html)
@@ -20,4 +12,5 @@ module ContentHelper
   def chief_hash(directory_info, subdivision_title)
     directory_info.select{ |subdivision| subdivision.title == subdivision_title }.first.try(:chief)
   end
+
 end
