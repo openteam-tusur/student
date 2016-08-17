@@ -194,7 +194,7 @@ GEM
     rails-assets-highcharts (4.1.9)
     rails-assets-jcarousel (0.3.4)
       rails-assets-jquery (>= 1.7)
-    rails-assets-jquery (3.0.0)
+    rails-assets-jquery (1.12.1)
     rails-assets-jquery-touchswipe (1.6.15)
     rails-assets-jquery.scrollTo (2.1.2)
       rails-assets-jquery (>= 1.8)
@@ -233,7 +233,7 @@ GEM
     rinku (1.5.1)
     russian (0.6.0)
       i18n (>= 0.5.0)
-    sass (3.4.22)
+    sass (3.4.19)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
@@ -314,11 +314,12 @@ DEPENDENCIES
   non-stupid-digest-assets
   rack-cache
   rack-utf8_sanitizer
-  rails (= 4.2.6)
+  rails (~> 4.2.6)
   rails-assets-chosen!
   rails-assets-galleria!
   rails-assets-highcharts!
   rails-assets-jcarousel!
+  rails-assets-jquery (= 1.12.1)!
   rails-assets-jquery-touchswipe!
   rails-assets-jquery.scrollTo!
   rails-assets-sugar!
@@ -327,6 +328,7 @@ DEPENDENCIES
   rest-client
   rest-client-components
   russian
+  sass (= 3.4.19)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form

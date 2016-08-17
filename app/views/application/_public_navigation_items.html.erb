@@ -1,4 +1,4 @@
-<% @main_navigation.content.values.first.children.each do |key, value| %>
+<% @main_navigation.content.values.first.children.to_a.each do |key, value| %>
   <li class='js-init-overlay js-init-subnanigation <%= 'active' if value['selected'] %>'>
     <%= render_link_for_navigation(nil, value, { :link_for => key }) %>
 
