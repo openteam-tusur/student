@@ -8,6 +8,7 @@ $ ->
   init_colorbox() if $('a.colorbox').length
   init_colorbox_video() if $('.js-colorbox-video, .js_video').length
   init_tooltip() if $('.js-tooltip').length
+  init_toggle_subnavigation() if $('.js-init-subnanigation').length
   init_collapse() if $('.collapsed-items-wrapper').length || $('.js-client-collapser').length || $('.js-simple-collapser').length
   init_landing() if $('.navigation_images').length
   init_overlay() if $('.js-init-overlay').length

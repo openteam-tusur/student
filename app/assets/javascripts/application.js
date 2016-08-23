@@ -20,6 +20,7 @@
 //= require map
 //= require overlay
 //= require tooltip
+//= require toggle_subnavigation
 //= require landing
 //= require photoalbum
 //= require white_galleria
